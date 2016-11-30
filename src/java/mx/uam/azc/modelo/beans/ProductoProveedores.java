@@ -8,6 +8,7 @@ package mx.uam.azc.modelo.beans;
 /**
  *
  * @author Marce
+ * @version 
  */
 public class ProductoProveedores {
     private Long idProductoProovedor = null;
