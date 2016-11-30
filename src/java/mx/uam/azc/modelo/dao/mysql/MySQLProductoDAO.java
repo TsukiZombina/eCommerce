@@ -34,7 +34,5 @@ public class MySQLProductoDAO implements ProductoDAO{
     @Override
     public Producto obtener(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
+    } 
 }
