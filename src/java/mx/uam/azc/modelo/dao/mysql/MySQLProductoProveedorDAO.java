@@ -3,26 +3,27 @@ package mx.uam.azc.modelo.dao.mysql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import mx.uam.azc.modelo.beans.Proveedor;
 import java.util.List;
 import mx.uam.azc.modelo.EcommerceException;
-import mx.uam.azc.modelo.dao.ProveedorDAO;
+import mx.uam.azc.modelo.beans.ProductoProveedor;
+import mx.uam.azc.modelo.dao.ProductoProveedorDAO;
 
 /**
  *
  * @author Marce
+ * @version
  */
-public class MySQLProveedorDAO implements ProveedorDAO{
+public class MySQLProductoProveedorDAO implements ProductoProveedorDAO {
 
     @Override
-    public void insertar(Proveedor t) throws EcommerceException {
+    public void insertar(ProductoProveedor t) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
     }
 
     @Override
-    public void modificar(Proveedor t) throws EcommerceException {
+    public void modificar(ProductoProveedor t) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -32,13 +33,12 @@ public class MySQLProveedorDAO implements ProveedorDAO{
     }
 
     @Override
-    public List<Proveedor> obtenerTodos() throws EcommerceException {
+    public List<ProductoProveedor> obtenerTodos() throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Proveedor obtener(Long id) throws EcommerceException {
+    public ProductoProveedor obtener(Long id) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

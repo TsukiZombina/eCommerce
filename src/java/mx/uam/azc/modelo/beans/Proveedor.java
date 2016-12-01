@@ -10,6 +10,10 @@ public class Proveedor implements Serializable{
     private Long idProveedores = null;
     private String claveProveedor;
     private String nombreProveedor;
+    private String contactoTel;
+    private String contactoCorreo;
+    private String contactoDireccion;
+    private String encargado;
 
     public Proveedor() {
     }
@@ -36,5 +40,37 @@ public class Proveedor implements Serializable{
 
     public void setNombreProveedor(String nombreProveedor) {
         this.nombreProveedor = nombreProveedor;
+    }
+
+    public String getContactoTel() {
+        return contactoTel;
+    }
+
+    public void setContactoTel(String contactoTel) {
+        this.contactoTel = contactoTel;
+    }
+
+    public String getContactoCorreo() {
+        return contactoCorreo;
+    }
+
+    public void setContactoCorreo(String contactoCorreo) {
+        this.contactoCorreo = contactoCorreo;
+    }
+
+    public String getContactoDireccion() {
+        return contactoDireccion;
+    }
+
+    public void setContactoDireccion(String contactoDireccion) {
+        this.contactoDireccion = contactoDireccion;
+    }
+
+    public String getEncargado() {
+        return encargado;
+    }
+
+    public void setEncargado(String encargado) {
+        this.encargado = encargado;
     }
 }

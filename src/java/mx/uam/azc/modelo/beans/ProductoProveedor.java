@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mx.uam.azc.modelo.beans;
 
 /**
@@ -10,14 +6,14 @@ package mx.uam.azc.modelo.beans;
  * @author Marce
  * @version 
  */
-public class ProductoProveedores {
+public class ProductoProveedor {
     private Long idProductoProovedor = null;
     private int existencias;
-    private int PrecioUnitario;
+    private double PrecioUnitario;
     private Long idProducto;
     private Long idProveedores;
 
-    public ProductoProveedores() {
+    public ProductoProveedor() {
     }
 
     public Long getIdProductoProovedor() {
@@ -36,11 +32,11 @@ public class ProductoProveedores {
         this.existencias = existencias;
     }
 
-    public int getPrecioUnitario() {
+    public double getPrecioUnitario() {
         return PrecioUnitario;
     }
 
-    public void setPrecioUnitario(int PrecioUnitario) {
+    public void setPrecioUnitario(double PrecioUnitario) {
         this.PrecioUnitario = PrecioUnitario;
     }
 
@@ -58,7 +54,5 @@ public class ProductoProveedores {
 
     public void setIdProveedores(Long idProveedores) {
         this.idProveedores = idProveedores;
-    }
-    
-    
+    } 
 }

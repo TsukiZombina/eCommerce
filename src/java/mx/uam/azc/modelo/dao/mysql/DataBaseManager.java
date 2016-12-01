@@ -36,5 +36,4 @@ public class DataBaseManager {
     public static Connection getConexion(){
         return INSTANCE.crearConexion();
     }
-    
 }
