@@ -1,6 +1,7 @@
 package mx.uam.azc.modelo.dao;
 
 import java.util.List;
+import mx.uam.azc.modelo.EcommerceException;
 
 /**
  *
@@ -9,9 +10,9 @@ import java.util.List;
  */
 
 public interface DAO<T, L> {
-    public void insertar(T t);
-    public void modificar(T t);
-    public void eliminar(L id);
-    public List<T> obtenerTodos();
-    public T obtener(L id);
+    public void insertar(T t) throws EcommerceException;
+    public void modificar(T t) throws EcommerceException;
+    public void eliminar(L id) throws EcommerceException;
+    public List<T> obtenerTodos() throws EcommerceException;
+    public T obtener(L id) throws EcommerceException;
 }
