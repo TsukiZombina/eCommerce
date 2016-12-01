@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @version 0.1
  */
 public class DataBaseManager {
-    public static DataBaseManager INSTANCE = new DataBaseManager();
+    private static DataBaseManager INSTANCE = new DataBaseManager();
     
     private final String host = "localhost";
     private final String basededatos = "ejemplo";
@@ -21,7 +21,7 @@ public class DataBaseManager {
     private DataBaseManager() {
     }
     
-    public Connection getConexion(){
+    private Connection crearConexion(){
         Connection con = null;
         try {
             con = (Connection) DriverManager.getConnection(url, usuario, password);
@@ -33,8 +33,8 @@ public class DataBaseManager {
         return con;
     }
     
-    public DataBaseManager getDataBase(){
-        return INSTANCE;
+    public static Connection getDataBase(){
+        return INSTANCE.crearConexion();
     }
     
 }
