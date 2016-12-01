@@ -1,7 +1,7 @@
 package com.uam.azc.modelo.dao;
 
-import mx.uam.azc.modelo.dao.mysql.DataBaseManager;
 import java.sql.Connection;
+import mx.uam.azc.modelo.dao.mysql.DataBaseManager;
 import org.junit.Test;
 
 /**
@@ -12,7 +12,7 @@ public class DataBaseManagerTest {
 
     @Test
     public void testSomeMethod() {
-        Connection con = DataBaseManager.INSTANCE.getConexion();
+        Connection con = DataBaseManager.getConexion();
     }
     
 }
