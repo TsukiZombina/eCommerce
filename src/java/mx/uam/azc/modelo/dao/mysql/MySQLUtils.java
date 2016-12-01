@@ -38,4 +38,23 @@ public class MySQLUtils {
             }
         }
     }
+    
+    public static void cerrar(PreparedStatement ps, Connection con) throws EcommerceException {
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException ex) {
+                throw new EcommerceException("Error al cerrar el recurso: " + ex.getMessage());
+            }
+        }
+
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                throw new EcommerceException("Error al cerrar el recurso: " + ex.getMessage());
+
+            }
+        }
+    }
 }
