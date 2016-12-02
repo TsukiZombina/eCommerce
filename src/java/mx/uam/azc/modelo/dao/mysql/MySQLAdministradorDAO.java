@@ -15,31 +15,14 @@ import mx.uam.azc.modelo.dao.AdministradorDAO;
  * @version 1.0
  */
 public class MySQLAdministradorDAO implements AdministradorDAO{
-
-    @Override
-    public void insertar(Administrador t) throws EcommerceException {
-        Connection con = DataBaseManager.getConexion();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-    }
-
+    
     @Override
     public void modificar(Administrador t) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void eliminar(Long id) throws EcommerceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Administrador> obtenerTodos() throws EcommerceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public Administrador obtener(Long id) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }   
+    }
 }
