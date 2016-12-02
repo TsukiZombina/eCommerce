@@ -9,9 +9,11 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class Proveedor implements Serializable{
-    private Long idProveedores = null;
-    private String claveProveedor;
-    private String nombreProveedor;
+    private Long idProveedor = null;
+    private String clave;
+    private String nombre;
+    private String apellidoP;
+    private String apellidoM;
     private String contactoTel;
     private String contactoCorreo;
     private String contactoDireccion;
@@ -20,28 +22,44 @@ public class Proveedor implements Serializable{
     public Proveedor() {
     }
 
-    public Long getIdProveedores() {
-        return idProveedores;
+    public Long getIdProveedor() {
+        return idProveedor;
     }
 
-    public void setIdProveedores(Long idProveedores) {
-        this.idProveedores = idProveedores;
+    public void setIdProveedor(Long idProveedor) {
+        this.idProveedor = idProveedor;
     }
 
-    public String getClaveProveedor() {
-        return claveProveedor;
+    public String getClave() {
+        return clave;
     }
 
-    public void setClaveProveedor(String claveProveedor) {
-        this.claveProveedor = claveProveedor;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
-    public String getNombreProveedor() {
-        return nombreProveedor;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreProveedor(String nombreProveedor) {
-        this.nombreProveedor = nombreProveedor;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String getApellidoP() {
+        return apellidoP;
+    }
+
+    public void setApellidoP(String apellidoP) {
+        this.apellidoP = apellidoP;
+    }
+
+    public String getApellidoM() {
+        return apellidoM;
+    }
+
+    public void setApellidoM(String apellidoM) {
+        this.apellidoM = apellidoM;
     }
 
     public String getContactoTel() {
