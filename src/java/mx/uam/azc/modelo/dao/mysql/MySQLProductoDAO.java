@@ -65,7 +65,11 @@ public class MySQLProductoDAO implements ProductoDAO {
     public void modificar(Producto producto) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
-
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
         try {
             ps = con.prepareStatement(UPDATE);
             ps.setString(1, producto.getClave());
@@ -86,7 +90,11 @@ public class MySQLProductoDAO implements ProductoDAO {
     public void eliminar(Long id) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
-
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
         try {
             ps = con.prepareStatement(DELETE);
             ps.setLong(1, id);
@@ -121,7 +129,11 @@ public class MySQLProductoDAO implements ProductoDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<Producto> productos = new ArrayList<>();
-
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
         try {
             ps = con.prepareStatement(GETALL);
             rs = ps.executeQuery();
@@ -142,7 +154,11 @@ public class MySQLProductoDAO implements ProductoDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Producto producto = null;
-
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
         try {
             ps = con.prepareStatement(GETONE);
             ps.setLong(1, id);
