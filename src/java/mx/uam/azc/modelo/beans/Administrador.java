@@ -10,12 +10,13 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class Administrador implements Serializable{
-    private Long idAdministrador;
+    private Long idAdministrador = null;
     private String nombre;
     private String apellidoP;
     private String apellidoM;
     private String username;
     private String password;
+    private String sal;
 
     public Administrador() {
     }
@@ -68,4 +69,11 @@ public class Administrador implements Serializable{
         this.password = password;
     }
     
+    public String getSal() {
+        return sal;
+    }
+
+    public void setSal(String sal) {
+        this.sal = sal;
+    }
 }
