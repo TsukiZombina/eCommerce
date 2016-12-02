@@ -7,7 +7,9 @@ package mx.uam.azc.modelo.dao;
 
 /**
  *
- * @author Marce
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public interface DAOManager {
     AdministradorDAO getAdministradorDAO();

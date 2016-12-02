@@ -5,10 +5,10 @@ import mx.uam.azc.modelo.EcommerceException;
 
 /**
  *
- * @author Marce
- * @version 
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
-
 public interface DAO<T, L> {
     public void insertar(T t) throws EcommerceException;
     public void modificar(T t) throws EcommerceException;

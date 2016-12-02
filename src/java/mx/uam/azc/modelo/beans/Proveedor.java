@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 /**
  *
- * @author Marce
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class Proveedor implements Serializable{
     private Long idProveedores = null;

@@ -10,7 +10,9 @@ import mx.uam.azc.modelo.dao.ProveedorDAO;
 
 /**
  *
- * @author Marce
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class MySQLProveedorDAO implements ProveedorDAO{
 

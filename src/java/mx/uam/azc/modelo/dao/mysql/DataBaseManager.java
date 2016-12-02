@@ -6,8 +6,9 @@ import java.sql.SQLException;
 
 /**
  *
- * @author 
- * @version 0.1
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class DataBaseManager {
     private final static DataBaseManager INSTANCE = new DataBaseManager();

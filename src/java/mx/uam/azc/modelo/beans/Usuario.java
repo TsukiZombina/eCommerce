@@ -1,12 +1,12 @@
-
 package mx.uam.azc.modelo.beans;
 
 import java.io.Serializable;
 
 /**
  *
- * @author ammy_
- * @version 
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class Usuario implements Serializable{
     private Long idUsiario = null;

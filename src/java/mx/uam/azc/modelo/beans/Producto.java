@@ -4,8 +4,9 @@ import java.io.Serializable;
 
 /**
  *
- * @author Marce
- * @version 
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class Producto implements Serializable{
     private Long idProducto = null;

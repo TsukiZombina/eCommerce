@@ -1,10 +1,10 @@
-
 package mx.uam.azc.modelo.beans;
 
 /**
  *
- * @author Marce
- * @version 
+ * @author Zelzin Marcela Márquez Navarrete
+ * @author Ernesto García Maldonado
+ * @version 1.0
  */
 public class ProductoProveedor {
     private Long idProductoProovedor = null;
