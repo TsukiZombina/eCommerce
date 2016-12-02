@@ -2,6 +2,8 @@ package mx.uam.azc.modelo.dao.mysql;
 
 import mx.uam.azc.modelo.dao.AdministradorDAO;
 import mx.uam.azc.modelo.dao.DAOManager;
+import mx.uam.azc.modelo.dao.DetalleOrden;
+import mx.uam.azc.modelo.dao.Orden;
 import mx.uam.azc.modelo.dao.ProductoDAO;
 import mx.uam.azc.modelo.dao.ProductoProveedorDAO;
 import mx.uam.azc.modelo.dao.ProveedorDAO;
@@ -24,9 +26,19 @@ public class MySQLDAOManager implements DAOManager{
         }
         return administrador;
     }
+    
+    @Override
+    public DetalleOrden getDetalleOrden() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
-    public ProductoDAO getProductpDAO() {
+    public Orden getOrden() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ProductoDAO getProductoDAO() {
         if(producto == null){
             producto = new MySQLProductoDAO();
         }

@@ -13,8 +13,17 @@ package mx.uam.azc.modelo.dao;
  */
 public interface DAOManager {
     AdministradorDAO getAdministradorDAO();
-    ProductoDAO getProductpDAO();
+    
+    DetalleOrden getDetalleOrden();
+    
+    Orden getOrden();
+    
+    ProductoDAO getProductoDAO();
+    
     ProductoProveedorDAO getProductoProveedor();
+    
     ProveedorDAO getProveedorDAO();
+    
     UsuarioDAO getUsuarioDAO();
+    
 }
