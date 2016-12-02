@@ -5,6 +5,7 @@ nbproject/
 nbbuild/
 dist/
 nbdist/
+test/
 build.xml
 nbactions.xml
 .nb-gradle/
