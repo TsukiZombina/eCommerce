@@ -41,7 +41,7 @@ public class MySQLProductoDAO implements ProductoDAO {
             ps.setString(2, unProducto.getNombre());
             ps.setString(3, unProducto.getDescripcion());
 
-            if (ps.executeUpdate() == 1) {
+            if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("Puede ser que no se haya guardado");
             }
 
@@ -68,9 +68,9 @@ public class MySQLProductoDAO implements ProductoDAO {
 
         try {
             ps = con.prepareStatement(UPDATE);
-            ps.setString(1, "clave");
-            ps.setString(2, "nombre");
-            ps.setString(3, "descripcion");
+            ps.setString(1, producto.getClave());
+            ps.setString(2, producto.getNombre());
+            ps.setString(3, producto.getDescripcion());
             ps.setLong(4, producto.getIdProducto());
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("No se pudo modificar el producto " + producto.getIdProducto());
