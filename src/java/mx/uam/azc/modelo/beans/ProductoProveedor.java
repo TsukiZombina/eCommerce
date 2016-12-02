@@ -7,37 +7,37 @@ package mx.uam.azc.modelo.beans;
  * @version 1.0
  */
 public class ProductoProveedor {
-    private Long idProductoProovedor = null;
-    private int existencias;
-    private double PrecioUnitario;
+    private Long idProductoProveedor = null;
+    private int existencia;
+    private double precioUnitario;
     private Long idProducto;
-    private Long idProveedores;
+    private Long idProveedor;
 
     public ProductoProveedor() {
     }
 
-    public Long getIdProductoProovedor() {
-        return idProductoProovedor;
+    public Long getIdProductoProveedor() {
+        return idProductoProveedor;
     }
 
-    public void setIdProductoProovedor(Long idProductoProovedor) {
-        this.idProductoProovedor = idProductoProovedor;
+    public void setIdProductoProveedor(Long idProductoProveedor) {
+        this.idProductoProveedor = idProductoProveedor;
     }
 
-    public int getExistencias() {
-        return existencias;
+    public int getExistencia() {
+        return existencia;
     }
 
-    public void setExistencias(int existencias) {
-        this.existencias = existencias;
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
     }
-
+    
     public double getPrecioUnitario() {
-        return PrecioUnitario;
+        return precioUnitario;
     }
 
-    public void setPrecioUnitario(double PrecioUnitario) {
-        this.PrecioUnitario = PrecioUnitario;
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
 
     public Long getIdProducto() {
@@ -49,10 +49,10 @@ public class ProductoProveedor {
     }
 
     public Long getIdProveedores() {
-        return idProveedores;
+        return idProveedor;
     }
 
-    public void setIdProveedores(Long idProveedores) {
-        this.idProveedores = idProveedores;
+    public void setIdProveedores(Long idProveedor) {
+        this.idProveedor = idProveedor;
     } 
 }
