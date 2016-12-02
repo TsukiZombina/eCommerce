@@ -18,6 +18,7 @@ import mx.uam.azc.modelo.dao.UsuarioDAO;
  */
 public class MySQLDAOManager implements DAOManager{
     private AdministradorDAO administrador = null;
+    private ProductoDAO producto = null;
     
     @Override
     public AdministradorDAO getAdministradorDAO() {
@@ -29,7 +30,10 @@ public class MySQLDAOManager implements DAOManager{
 
     @Override
     public ProductoDAO getProductpDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(producto == null){
+            producto = new MySQLProductoDAO();
+        }
+        return producto;
     }
 
     @Override
