@@ -9,12 +9,13 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class Usuario implements Serializable{
-    private Long idUsiario = null;
+    private Long idUsuario = null;
     private String nombre;
     private String apellidoP;
     private String apellidoM;
-    private String nomUsuario;
+    private String username;
     private String password;
+    private String sal;
     private String contactoTel;
     private String contactoCorreo;
     private double saldo;
@@ -22,12 +23,12 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Long getIdUsiario() {
-        return idUsiario;
+    public Long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setIdUsiario(Long idUsiario) {
-        this.idUsiario = idUsiario;
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -54,12 +55,12 @@ public class Usuario implements Serializable{
         this.apellidoM = apellidoM;
     }
 
-    public String getNomUsuario() {
-        return nomUsuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNomUsuario(String nomUsuario) {
-        this.nomUsuario = nomUsuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -68,6 +69,14 @@ public class Usuario implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSal() {
+        return sal;
+    }
+
+    public void setSal(String sal) {
+        this.sal = sal;
     }
 
     public String getContactoTel() {
