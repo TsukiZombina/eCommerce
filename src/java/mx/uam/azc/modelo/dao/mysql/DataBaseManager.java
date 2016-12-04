@@ -15,8 +15,8 @@ public class DataBaseManager {
     
     private final String host = "localhost";
     private final String basededatos = "ecommercedb";
-    private final String usuario ="root";
-    private final String password ="root";
+    private final String usuario ="uEmpresarial";
+    private final String password ="12345";
     private final String url="jdbc:mysql://"+host+":3306/"+basededatos;    
     
     private DataBaseManager() {
