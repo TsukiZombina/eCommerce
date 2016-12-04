@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Leoshop Website Template | About :: w3layouts</title>
+<title>Free Leoshop Website Template | 404 :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -17,7 +18,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- dropdown -->
 <script src="js/jquery.easydropdown.js"></script>
 </head>
 <body>
@@ -36,32 +36,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    				        <select tabindex="4" class="dropdown">
 							<option value="" class="label" value="">Currency :</option>
 							<option value="1">$ Dollar</option>
-							<option value="2">€ Euro</option>
+							<option value="2">â¬ Euro</option>
 						</select>
    				    </div>
    				    <div class="clear"></div>
    			 </div>
 			 <div class="cssmenu">
 				<ul>
-					<li class="active"><a href="login.html">Account</a></li> |
-					<li><a href="checkout.html">Wishlist</a></li> |
-					<li><a href="checkout.html">Checkout</a></li> |
-					<li><a href="login.html">Log In</a></li> |
-					<li><a href="register.html">Sign Up</a></li>
+					<li class="active"><a href="login.jsp">Account</a></li> |
+					<li><a href="checkout.jsp">Wishlist</a></li> |
+					<li><a href="checkout.jsp">Checkout</a></li> |
+					<li><a href="login.jsp">Log In</a></li> |
+					<li><a href="register.jsp">Sign Up</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
  		</div>
-	  </div>
-	 <div class="header-bottom">
+	 </div>
+	  <div class="header-bottom">
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.jsp"><img src="images/logo.png" alt=""/></a>
 				</div>
 				<div class="menu">
 	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
+			<li class="active grid"><a href="index.jsp">Home</a></li>
 			<li><a class="color4" href="#">women</a>
 				<div class="megapanel">
 					<div class="row">
@@ -69,10 +69,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Contact Lenses</h4>
 								<ul>
-									<li><a href="womens.html">Daily-wear soft lenses</a></li>
-									<li><a href="womens.html">Extended-wear</a></li>
-									<li><a href="womens.html">Lorem ipsum </a></li>
-									<li><a href="womens.html">Planned replacement</a></li>
+									<li><a href="womens.jsp">Daily-wear soft lenses</a></li>
+									<li><a href="womens.jsp">Extended-wear</a></li>
+									<li><a href="womens.jsp">Lorem ipsum </a></li>
+									<li><a href="womens.jsp">Planned replacement</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -80,10 +80,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Sun Glasses</h4>
 								<ul>
-									<li><a href="womens.html">Heart-Shaped</a></li>
-									<li><a href="womens.html">Square-Shaped</a></li>
-									<li><a href="womens.html">Round-Shaped</a></li>
-									<li><a href="womens.html">Oval-Shaped</a></li>
+									<li><a href="womens.jsp">Heart-Shaped</a></li>
+									<li><a href="womens.jsp">Square-Shaped</a></li>
+									<li><a href="womens.jsp">Round-Shaped</a></li>
+									<li><a href="womens.jsp">Oval-Shaped</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -91,11 +91,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Eye Glasses</h4>
 								<ul>
-									<li><a href="womens.html">Anti Reflective</a></li>
-									<li><a href="womens.html">Aspheric</a></li>
-									<li><a href="womens.html">Bifocal</a></li>
-									<li><a href="womens.html">Hi-index</a></li>
-									<li><a href="womens.html">Progressive</a></li>
+									<li><a href="womens.jsp">Anti Reflective</a></li>
+									<li><a href="womens.jsp">Aspheric</a></li>
+									<li><a href="womens.jsp">Bifocal</a></li>
+									<li><a href="womens.jsp">Hi-index</a></li>
+									<li><a href="womens.jsp">Progressive</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -108,10 +108,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Contact Lenses</h4>
 								<ul>
-									<li><a href="mens.html">Daily-wear soft lenses</a></li>
-									<li><a href="mens.html">Extended-wear</a></li>
-									<li><a href="mens.html">Lorem ipsum </a></li>
-									<li><a href="mens.html">Planned replacement</a></li>
+									<li><a href="mens.jsp">Daily-wear soft lenses</a></li>
+									<li><a href="mens.jsp">Extended-wear</a></li>
+									<li><a href="mens.jsp">Lorem ipsum </a></li>
+									<li><a href="mens.jsp">Planned replacement</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -119,10 +119,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Sun Glasses</h4>
 								<ul>
-									<li><a href="mens.html">Heart-Shaped</a></li>
-									<li><a href="mens.html">Square-Shaped</a></li>
-									<li><a href="mens.html">Round-Shaped</a></li>
-									<li><a href="mens.html">Oval-Shaped</a></li>
+									<li><a href="mens.jsp">Heart-Shaped</a></li>
+									<li><a href="mens.jsp">Square-Shaped</a></li>
+									<li><a href="mens.jsp">Round-Shaped</a></li>
+									<li><a href="mens.jsp">Oval-Shaped</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -130,18 +130,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Eye Glasses</h4>
 								<ul>
-									<li><a href="mens.html">Anti Reflective</a></li>
-									<li><a href="mens.html">Aspheric</a></li>
-									<li><a href="mens.html">Bifocal</a></li>
-									<li><a href="mens.html">Hi-index</a></li>
-									<li><a href="mens.html">Progressive</a></li>
+									<li><a href="mens.jsp">Anti Reflective</a></li>
+									<li><a href="mens.jsp">Aspheric</a></li>
+									<li><a href="mens.jsp">Bifocal</a></li>
+									<li><a href="mens.jsp">Hi-index</a></li>
+									<li><a href="mens.jsp">Progressive</a></li>
 								</ul>	
 							</div>												
 						</div>
 					</div>
 				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
+				<li><a class="color6" href="other.jsp">Other</a></li>
+				<li><a class="color7" href="other.jsp">Purchase</a></li>
 			</ul>
 			</div>
 		</div>
@@ -174,86 +174,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="clear"></div>
      </div>
 	</div>
-       <div class="login">
-          <div class="wrap">
-				<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a>  / About</ul>
-				<div class="section group">
-				   <div class="labout span_1_of_about">
-					 <h3>Testimonials</h3>
-					  <div class="testimonials ">
-						<div class="testi-item">
-						<blockquote class="testi-item_blockquote">
-							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
-							<div class="clear"></div>
-						</blockquote>
-							<small class="testi-meta"><span class="user">Lorem ipsum dolor </span>,
-							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small></div>
-					   </div>
-					   <div class="testimonials ">
-						<div class="testi-item">
-						<blockquote class="testi-item_blockquote">
-							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
-							<div class="clear"></div>
-						</blockquote>
-							<small class="testi-meta"><span class="user">Lorem ipsum dolor</span>,
-							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small></div>
-					   </div>
-				    </div>
-				    <div class="cont span_2_of_about">
-				       <h3>Our Mission</h3>
-					   	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				        <h5 class="m_6">Meet Our Team</h5>	
-				     <div class="section group">
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="images/a-img.jpg" title="continue" alt=""/></a>
-		                     <div id="small-dialog3" class="mfp-hide">
-							   <div class="pop_up2">
-							   	 <h2>Lorem ipsum </h2>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								</div>
-							 </div>
-							 <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="images/a-img1.jpg" title="continue" alt=""/></a>
-		                    <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="images/a-img2.jpg" title="continue" alt=""/></a>
-		                    <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-				        <div class="clear"></div> 
-							
-		   </div>
-		   <!-- Add fancyBox main JS and CSS files -->
-		<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-		<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
-		<script>
-			$(document).ready(function() {
-				$('.popup-with-zoom-anim').magnificPopup({
-					type: 'inline',
-					fixedContentPos: false,
-					fixedBgPos: true,
-					overflowY: 'auto',
-					closeBtnInside: true,
-					preloader: false,
-					midClick: true,
-					removalDelay: 300,
-					mainClass: 'my-mfp-zoom-in'
-			});
-		});
-		</script>
-           </div>
-		   <div class="clear"></div>	
+    <div class="login">
+       <div class="wrap">
+	      <div class="page-not-found">
+			<h1>404</h1>
 		  </div>
-	</div>	
-   </div>  
+        </div> 
+    </div>
     <div class="footer">
 		<div class="footer-top">
 			<div class="wrap">
@@ -274,7 +201,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
         <div class="footer-middle">
 			<div class="wrap">
-			 <div class="section group example">
+			  <div class="section group example">
 			  <div class="col_1_of_f_1 span_1_of_f_1">
 				 <div class="section group example">
 				   <div class="col_1_of_f_2 span_1_of_f_2">
@@ -352,18 +279,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   </div>
 		  <div class="clear"></div>
 		    </div>
+			</div>
 		</div>
 		<div class="footer-bottom">
 			<div class="wrap">
 				<div class="copy">
-			        <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			        <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		        </div>
 				<div class="f-list2">
 				<ul>
-					<li class="active"><a href="about.html">About Us</a></li> |
-					<li><a href="delivery.html">Delivery & Returns</a></li> |
-					<li><a href="delivery.html">Terms & Conditions</a></li> |
-					<li><a href="contact.html">Contact Us</a></li> 
+					<li class="active"><a href="about.jsp">About Us</a></li> |
+					<li><a href="delivery.jsp">Delivery & Returns</a></li> |
+					<li><a href="delivery.jsp">Terms & Conditions</a></li> |
+					<li><a href="#">Contact Us</a></li> 
 				</ul>
 				</div>
 				<div class="clear"></div>

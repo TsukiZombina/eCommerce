@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Leoshop Website Template | Single:: w3layouts</title>
+<title>Free Leoshop Website Template | Other :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -25,43 +26,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				$('.scroll-pane').jScrollPane();
 			});
 		</script>
-<!-- start details -->
-<script src="js/slides.min.jquery.js"></script>
-   <script>
-		$(function(){
-			$('#products').slides({
-				preload: true,
-				preloadImage: 'img/loading.gif',
-				effect: 'slide, fade',
-				crossfade: true,
-				slideSpeed: 350,
-				fadeSpeed: 500,
-				generateNextPrev: true,
-				generatePagination: false
-			});
-		});
-	</script>
-<link rel="stylesheet" href="css/etalage.css">
-<script src="js/jquery.etalage.min.js"></script>
-<script>
-			jQuery(document).ready(function($){
-
-				$('#etalage').etalage({
-					thumb_image_width: 360,
-					thumb_image_height: 360,
-					source_image_width: 900,
-					source_image_height: 900,
-					show_hint: true,
-					click_callback: function(image_anchor, instance_id){
-						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-					}
-				});
-
-			});
-		</script>	
 </head>
 <body>
-       <div class="header-top">
+     <div class="header-top">
 			<div class="wrap"> 
 			  <div class="header-top-left">
 			  	   <div class="box">
@@ -70,24 +37,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<option value="1">English</option>
 							<option value="2">French</option>
 							<option value="3">German</option>
-					 </select>
+					  </select>
    				    </div>
    				    <div class="box1">
    				        <select tabindex="4" class="dropdown">
 							<option value="" class="label" value="">Currency :</option>
 							<option value="1">$ Dollar</option>
-							<option value="2">€ Euro</option>
+							<option value="2">â¬ Euro</option>
 						</select>
    				    </div>
    				    <div class="clear"></div>
    			 </div>
 			 <div class="cssmenu">
 				<ul>
-					<li class="active"><a href="login.html">Account</a></li> |
-					<li><a href="checkout.html">Wishlist</a></li> |
-					<li><a href="checkout.html">Checkout</a></li> |
-					<li><a href="login.html">Log In</a></li> |
-					<li><a href="register.html">Sign Up</a></li>
+					<li class="active"><a href="login.jsp">Account</a></li> |
+					<li><a href="checkout.jsp">Wishlist</a></li> |
+					<li><a href="checkout.jsp">Checkout</a></li> |
+					<li><a href="login.jsp">Log In</a></li> |
+					<li><a href="register.jsp">Sign Up</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -97,11 +64,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.jsp"><img src="images/logo.png" alt=""/></a>
 				</div>
 				<div class="menu">
 	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
+			<li class="active grid"><a href="index.jsp">Home</a></li>
 			<li><a class="color4" href="#">women</a>
 				<div class="megapanel">
 					<div class="row">
@@ -109,10 +76,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Contact Lenses</h4>
 								<ul>
-									<li><a href="womens.html">Daily-wear soft lenses</a></li>
-									<li><a href="womens.html">Extended-wear</a></li>
-									<li><a href="womens.html">Lorem ipsum </a></li>
-									<li><a href="womens.html">Planned replacement</a></li>
+									<li><a href="womens.jsp">Daily-wear soft lenses</a></li>
+									<li><a href="womens.jsp">Extended-wear</a></li>
+									<li><a href="womens.jsp">Lorem ipsum </a></li>
+									<li><a href="womens.jsp">Planned replacement</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -120,10 +87,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Sun Glasses</h4>
 								<ul>
-									<li><a href="womens.html">Heart-Shaped</a></li>
-									<li><a href="womens.html">Square-Shaped</a></li>
-									<li><a href="womens.html">Round-Shaped</a></li>
-									<li><a href="womens.html">Oval-Shaped</a></li>
+									<li><a href="womens.jsp">Heart-Shaped</a></li>
+									<li><a href="womens.jsp">Square-Shaped</a></li>
+									<li><a href="womens.jsp">Round-Shaped</a></li>
+									<li><a href="womens.jsp">Oval-Shaped</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -131,11 +98,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Eye Glasses</h4>
 								<ul>
-									<li><a href="womens.html">Anti Reflective</a></li>
-									<li><a href="womens.html">Aspheric</a></li>
-									<li><a href="womens.html">Bifocal</a></li>
-									<li><a href="womens.html">Hi-index</a></li>
-									<li><a href="womens.html">Progressive</a></li>
+									<li><a href="womens.jsp">Anti Reflective</a></li>
+									<li><a href="womens.jsp">Aspheric</a></li>
+									<li><a href="womens.jsp">Bifocal</a></li>
+									<li><a href="womens.jsp">Hi-index</a></li>
+									<li><a href="womens.jsp">Progressive</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -148,10 +115,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Contact Lenses</h4>
 								<ul>
-									<li><a href="mens.html">Daily-wear soft lenses</a></li>
-									<li><a href="mens.html">Extended-wear</a></li>
-									<li><a href="mens.html">Lorem ipsum </a></li>
-									<li><a href="mens.html">Planned replacement</a></li>
+									<li><a href="mens.jsp">Daily-wear soft lenses</a></li>
+									<li><a href="mens.jsp">Extended-wear</a></li>
+									<li><a href="mens.jsp">Lorem ipsum </a></li>
+									<li><a href="mens.jsp">Planned replacement</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -159,10 +126,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Sun Glasses</h4>
 								<ul>
-									<li><a href="mens.html">Heart-Shaped</a></li>
-									<li><a href="mens.html">Square-Shaped</a></li>
-									<li><a href="mens.html">Round-Shaped</a></li>
-									<li><a href="mens.html">Oval-Shaped</a></li>
+									<li><a href="mens.jsp">Heart-Shaped</a></li>
+									<li><a href="mens.jsp">Square-Shaped</a></li>
+									<li><a href="mens.jsp">Round-Shaped</a></li>
+									<li><a href="mens.jsp">Oval-Shaped</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -170,18 +137,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="h_nav">
 								<h4>Eye Glasses</h4>
 								<ul>
-									<li><a href="mens.html">Anti Reflective</a></li>
-									<li><a href="mens.html">Aspheric</a></li>
-									<li><a href="mens.html">Bifocal</a></li>
-									<li><a href="mens.html">Hi-index</a></li>
-									<li><a href="mens.html">Progressive</a></li>
+									<li><a href="mens.jsp">Anti Reflective</a></li>
+									<li><a href="mens.jsp">Aspheric</a></li>
+									<li><a href="mens.jsp">Bifocal</a></li>
+									<li><a href="mens.jsp">Hi-index</a></li>
+									<li><a href="mens.jsp">Progressive</a></li>
 								</ul>	
 							</div>												
 						</div>
 					</div>
 				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
+				<li><a class="color6" href="other.jsp">Other</a></li>
+				<li><a class="color7" href="other.jsp">Purchase</a></li>
 			</ul>
 			</div>
 		</div>
@@ -217,110 +184,361 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="mens">    
   <div class="main">
      <div class="wrap">
-     	<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a> / <a href="#">Dolor sit amet</a> / Lorem ipsum dolor sit amet</ul>
 		<div class="cont span_2_of_3">
-		  	<div class="grid images_3_of_2">
-						<ul id="etalage">
-							<li>
-								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="images/s-img.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="images/s1.jpg" class="img-responsive" title="" />
-								</a>
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/s-img1.jpg" class="img-responsive" />
-								<img class="etalage_source_image" src="images/s2.jpg" class="img-responsive" title="" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/s-img2.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="images/s3.jpg" class="img-responsive"  />
-							</li>
-						    <li>
-								<img class="etalage_thumb_image" src="images/s4.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="images/s-img3.jpg" class="img-responsive"  />
-							</li>
-						</ul>
-						 <div class="clearfix"></div>
-	            </div>
-		         <div class="desc1 span_3_of_2">
-		         	<h3 class="m_3">Lorem ipsum dolor sit amet</h3>
-		             <p class="m_5">Rs. 888 <span class="reducedfrom">Rs. 999</span> <a href="#">click for offer</a></p>
-		         	 <div class="btn_form">
-						<form>
-							<input type="submit" value="buy" title="">
-						</form>
-					 </div>
-					<span class="m_link"><a href="#">login to save in wishlist</a> </span>
-				     <p class="m_text2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit </p>
-			     </div>
-			   <div class="clear"></div>	
-	    <div class="clients">
-	    <h3 class="m_3">10 Other Products in the same category</h3>
-		 <ul id="flexiselDemo3">
-			<li><img src="images/s5.jpg" /><a href="#">Category</a><p>Rs 600</p></li>
-			<li><img src="images/s6.jpg" /><a href="#">Category</a><p>Rs 850</p></li>
-			<li><img src="images/s7.jpg" /><a href="#">Category</a><p>Rs 900</p></li>
-			<li><img src="images/s8.jpg" /><a href="#">Category</a><p>Rs 550</p></li>
-			<li><img src="images/s9.jpg" /><a href="#">Category</a><p>Rs 750</p></li>
-		 </ul>
-	<script type="text/javascript">
-		$(window).load(function() {
-			$("#flexiselDemo1").flexisel();
-			$("#flexiselDemo2").flexisel({
-				enableResponsiveBreakpoints: true,
-		    	responsiveBreakpoints: { 
-		    		portrait: { 
-		    			changePoint:480,
-		    			visibleItems: 1
-		    		}, 
-		    		landscape: { 
-		    			changePoint:640,
-		    			visibleItems: 2
-		    		},
-		    		tablet: { 
-		    			changePoint:768,
-		    			visibleItems: 3
-		    		}
-		    	}
-		    });
-		
-			$("#flexiselDemo3").flexisel({
-				visibleItems: 5,
-				animationSpeed: 1000,
-				autoPlay: false,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-		    	responsiveBreakpoints: { 
-		    		portrait: { 
-		    			changePoint:480,
-		    			visibleItems: 1
-		    		}, 
-		    		landscape: { 
-		    			changePoint:640,
-		    			visibleItems: 2
-		    		},
-		    		tablet: { 
-		    			changePoint:768,
-		    			visibleItems: 3
-		    		}
-		    	}
-		    });
-		    
-		});
-	</script>
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-     </div>
-     <div class="toogle">
-     	<h3 class="m_3">Product Details</h3>
-     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-     </div>
-     <div class="toogle">
-     	<h3 class="m_3">More Information</h3>
-     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-     </div>
-      </div>
-			<div class="rsingle span_1_of_single">
+		  	<h2 class="head">Others</h2>
+		  	<div class="mens-toolbar">
+              <div class="sort">
+               	<div class="sort-by">
+		            <label>Sort By</label>
+		            <select>
+		                            <option value="">
+		                    Position                </option>
+		                            <option value="">
+		                    Name                </option>
+		                            <option value="">
+		                    Price                </option>
+		            </select>
+		            <a href=""><img src="images/arrow2.gif" alt="" class="v-middle"></a>
+               </div>
+    		</div>
+        <div class="pager">   
+        	<div class="limiter visible-desktop">
+            <label>Show</label>
+            <select>
+                            <option value="" selected="selected">
+                    9                </option>
+                            <option value="">
+                    15                </option>
+                            <option value="">
+                    30                </option>
+                        </select> per page        
+             </div>
+       		<ul class="dc_pagination dc_paginationA dc_paginationA06">
+			    <li><a href="#" class="previous">Pages</a></li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+		  	</ul>
+	   		<div class="clear"></div>
+    	</div>
+     	<div class="clear"></div>
+	</div>
+			<div class="top-box">
+			 <div class="col_1_of_3 span_1_of_3"> 
+			   <a href="single.jsp">
+				<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic.jpg" alt=""/>
+					</div>
+                    <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                 </a>
+				</div>
+			   <div class="col_1_of_3 span_1_of_3">
+			   	 <a href="single.jsp">
+					<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic1.jpg" alt=""/>
+					</div>
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				 <a href="single.jsp">
+				  <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic2.jpg" alt=""/>
+					</div>
+                    <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="reducedfrom">$66.00</span>
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="clear"></div>
+			</div>	
+			<div class="top-box">
+			  <div class="col_1_of_3 span_1_of_3">
+			  	 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic3.jpg" alt=""/>
+					</div>
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<a href="single.jsp">
+					<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic4.jpg" alt=""/>
+					</div>
+					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic5.jpg" alt=""/>
+					</div>
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                 </a>
+				</div>
+				<div class="clear"></div>
+			</div>	
+			<div class="top-box1">
+			  <div class="col_1_of_3 span_1_of_3">
+			  	 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic6.jpg" alt=""/>
+					</div>
+                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				 <a href="single.jsp">
+					<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic7.jpg" alt=""/>
+					</div>
+					 <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="reducedfrom">$66.00</span>
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				  <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic8.jpg" alt=""/>
+					</div>
+                   	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="clear"></div>
+			</div>	
+		 <h2 class="head">Staff Pick</h2>
+		  <div class="top-box1">
+			  <div class="col_1_of_3 span_1_of_3">
+			  	 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic8.jpg" alt=""/>
+					</div>
+                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					 <a href="single.jsp">
+					<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic4.jpg" alt=""/>
+					</div>
+				    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic2.jpg" alt=""/>
+					</div>
+                   	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="clear"></div>
+			</div>	
+		   <h2 class="head">New Products</h2>	
+		    <div class="section group">
+			  <div class="col_1_of_3 span_1_of_3">
+			  	 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic5.jpg" alt=""/>
+					</div>
+                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<a href="single.jsp">
+					<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic2.jpg" alt=""/>
+					</div>
+					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+				 <a href="single.jsp">
+				 <div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="images/pic3.jpg" alt=""/>
+					</div>
+                   	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                    <div class="price">
+					   <div class="cart-left">
+							<p class="title">Lorem Ipsum simply</p>
+							<div class="price1">
+							  <span class="actual">$12.00</span>
+							</div>
+						</div>
+						<div class="cart-right"> </div>
+						<div class="clear"></div>
+					 </div>				
+                   </div>
+                   </a>
+				</div>
+				<div class="clear"></div>
+			</div>			 							 			    		    
+		  </div>
+			<div class="rsidebar span_1_of_left">
 				<h5 class="m_1">Categories</h5>
 					<select class="dropdown" tabindex="8" data-settings='{"wrapperClass":"metro"}'>
 						<option value="1">Mens</option>
@@ -363,7 +581,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 		        </section>
-		       <section  class="sky-form">
+		        <section  class="sky-form">
 					<h4>Brand Name</h4>
 						<div class="row row1 scroll-pane">
 							<div class="col col-4">
@@ -395,13 +613,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Pilot</label>
 							</div>
 							<div class="col col-4">
-							    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Rectangle</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Rectangle</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Square</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Round</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Others</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Cat Eyes</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Wrap Around</label>
-						    </div>
+							</div>
 						</div>
 		       </section>
 		       <section  class="sky-form">
@@ -444,13 +662,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="#"> <span class="color7"> </span><p class="red">Gray</p></a></li>
 					   </ul>
 		       </section>
-		       <script src="js/jquery.easydropdown.js"></script>
-		      </div
-		      <div class="clear"></div>
+		      </div>
+			  <div class="clear"></div>
 			</div>
-			 <div class="clear"></div>
 		   </div>
 		</div>
+		<script src="js/jquery.easydropdown.js"></script>
 	<div class="footer">
 		<div class="footer-top">
 			<div class="wrap">
@@ -549,19 +766,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   </div>
 		  <div class="clear"></div>
 		    </div>
-		  </div>
+		   </div>
 		</div>
 		<div class="footer-bottom">
 			<div class="wrap">
 	                <div class="copy">
-			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			           <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		            </div>
 		       <div class="f-list2">
 				<ul>
-					<li class="active"><a href="about.html">About Us</a></li> |
-					<li><a href="delivery.html">Delivery & Returns</a></li> |
-					<li><a href="delivery.html">Terms & Conditions</a></li> |
-					<li><a href="contact.html">Contact Us</a></li> 
+					<li class="active"><a href="about.jsp">About Us</a></li> |
+					<li><a href="delivery.jsp">Delivery & Returns</a></li> |
+					<li><a href="delivery.jsp">Terms & Conditions</a></li> |
+					<li><a href="contact.jsp">Contact Us</a></li> 
 				</ul>
 			  </div>
 				<div class="clear"></div>

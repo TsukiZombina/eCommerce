@@ -48,11 +48,11 @@ public class ProductoProveedor {
         this.idProducto = idProducto;
     }
 
-    public Long getIdProveedores() {
+    public Long getIdProveedor() {
         return idProveedor;
     }
 
-    public void setIdProveedores(Long idProveedor) {
+    public void setIdProveedor(Long idProveedor) {
         this.idProveedor = idProveedor;
     } 
 }
