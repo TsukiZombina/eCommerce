@@ -10,7 +10,6 @@ import mx.uam.azc.modelo.beans.Administrador;
  * @version 1.0
  */
 public interface AdministradorDAO{
-    void modificar(Administrador administrador) throws EcommerceException;
-    
+    void modificar(Administrador administrador) throws EcommerceException; 
     Administrador obtener(Long id) throws EcommerceException;
 }

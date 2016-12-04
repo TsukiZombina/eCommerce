@@ -30,10 +30,10 @@ public class MySQLAdministradorDAO implements AdministradorDAO{
         try {
             ps = con.prepareStatement(UPDATE);
             ps.setLong(1, unAdministrador.getIdAdministrador());
-            ps.setString(3, unAdministrador.getNombre());
-            ps.setString(4, unAdministrador.getApellidoP());
-            ps.setString(5, unAdministrador.getApellidoM());
-            ps.setString(6, unAdministrador.getUsername());
+            ps.setString(2, unAdministrador.getNombre());
+            ps.setString(3, unAdministrador.getApellidoP());
+            ps.setString(4, unAdministrador.getApellidoM());
+            ps.setString(5, unAdministrador.getUsername());
             
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("No se pudo modificar el unAdministrador " + unAdministrador.getIdAdministrador());
