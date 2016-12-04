@@ -1,4 +1,3 @@
-
 package mx.uam.azc.modelo.beans;
 
 import java.io.Serializable;
