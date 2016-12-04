@@ -17,6 +17,7 @@ import mx.uam.azc.modelo.dao.AdministradorDAO;
 public class MySQLAdministradorDAO implements AdministradorDAO{
     private final String UPDATE = "UPDATE tb_producto SET clave = ?, nombre = ?, descripcion = ? WHERE id_producto = ?";
     private final String GETONE = "SELECT * FROM tb_producto WHERE id_producto = ?";
+    private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?);";
     
     @Override
     public void modificar(Administrador unAdministrador) throws EcommerceException {
@@ -90,5 +91,41 @@ public class MySQLAdministradorDAO implements AdministradorDAO{
         administrador.setSal(sal);
 
         return administrador;
+    }
+    
+    public boolean validarAdministrador(Long id, String password) throws EcommerceException {
+        Connection con = DataBaseManager.getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Administrador unAdministrador = null;
+        boolean verifica = false;
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
+        try {
+            unAdministrador = obtener(id);
+            
+            if (unAdministrador == null)
+                throw new EcommerceException("No se pudo ibtener la persona con id: " + id);
+            
+            ps = con.prepareStatement(CHECK_PASSWORD);
+            ps.setLong(1, unAdministrador.getIdAdministrador());
+            ps.setString(2, unAdministrador.getSal() + password);
+            
+            rs = ps.executeQuery();
+            
+            if (rs.next()){
+                verifica = rs.getBoolean(1);
+            } else
+                throw new EcommerceException("No se pudo validar la contraseña");
+            
+        } catch (SQLException ex) {
+            throw new EcommerceException("Error SQL : " + ex.getMessage());
+        } finally{
+            MySQLUtils.cerrar(ps, rs, con);
+        }  
+        return verifica;
     }
 }
