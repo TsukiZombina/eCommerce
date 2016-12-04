@@ -23,6 +23,7 @@ public class MySQLProductoDAO implements ProductoDAO {
     private final String UPDATE = "UPDATE tb_producto SET clave = ?, nombre = ?, descripcion = ? WHERE id_producto = ?";
     private final String GETONE = "SELECT * FROM tb_producto WHERE id_producto = ?";
     private final String GETALL = "SELECT * FROM tb_producto";
+    private final String DELETEPP = "DELETE FROM tb_productoproveedor WHERE id_producto = ?";
 
     @Override
     public void insertar(Producto unProducto) throws EcommerceException {
@@ -95,6 +96,11 @@ public class MySQLProductoDAO implements ProductoDAO {
         }
         
         try {
+            ps = con.prepareStatement(DELETEPP);
+            ps.setLong(1, id);
+            if (ps.executeUpdate() == 0) {
+                throw new EcommerceException("No se pudo eliminiar el producto" + id);
+            }
             ps = con.prepareStatement(DELETE);
             ps.setLong(1, id);
             if (ps.executeUpdate() == 0) {
