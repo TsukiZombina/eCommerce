@@ -18,7 +18,6 @@ import mx.uam.azc.modelo.EcommerceException;
  * @version 1.0
  */
 public class MySQLProductoDAO implements ProductoDAO {
-
     private final String INSERT = "INSERT INTO tb_producto(clave, nombre, descripcion) VALUES (?, ?, ?)";
     private final String DELETE = "DELETE FROM tb_producto WHERE id_producto = ?";
     private final String UPDATE = "UPDATE tb_producto SET clave = ?, nombre = ?, descripcion = ? WHERE id_producto = ?";
@@ -72,10 +71,10 @@ public class MySQLProductoDAO implements ProductoDAO {
         
         try {
             ps = con.prepareStatement(UPDATE);
-            ps.setString(1, producto.getClave());
-            ps.setString(2, producto.getNombre());
-            ps.setString(3, producto.getDescripcion());
-            ps.setLong(4, producto.getIdProducto());
+            ps.setLong(1, producto.getIdProducto());
+            ps.setString(2, producto.getClave());
+            ps.setString(3, producto.getNombre());
+            ps.setString(4, producto.getDescripcion());
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("No se pudo modificar el producto " + producto.getIdProducto());
             }
