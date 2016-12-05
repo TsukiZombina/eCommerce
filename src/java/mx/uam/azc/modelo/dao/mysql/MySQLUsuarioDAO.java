@@ -17,7 +17,7 @@ import mx.uam.azc.modelo.dao.UsuarioDAO;
  * @version 1.0
  */
 public class MySQLUsuarioDAO implements UsuarioDAO{
-    private final String INSERT = "INSERT INTO tb_usuario(clave, nombre, descripcion) VALUES (?, ?, ?)";
+    private final String INSERT = "INSERT INTO tb_usuario(nombre, apellidoP, apellidoM, username, password, sal, contactoTel, contactoCorreo, saldo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )";
     private final String DELETE = "DELETE FROM tb_usuario WHERE id_usuario = ?";
     private final String UPDATE = "UPDATE tb_usuario SET clave = ?, nombre = ?, descripcion = ? WHERE id_usuario = ?";
     private final String GETONE = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
@@ -40,9 +40,9 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(3, unUsuario.getApellidoM());
             ps.setString(4, unUsuario.getUsername());
             ps.setString(5, unUsuario.getPassword());
+            ps.setString(8, unUsuario.getSal());
             ps.setString(6, unUsuario.getContactoTel());
             ps.setString(7, unUsuario.getContactoCorreo());
-            ps.setString(8, unUsuario.getSal());
             ps.setDouble(9, unUsuario.getSaldo());
 
             if (ps.executeUpdate() == 0) {

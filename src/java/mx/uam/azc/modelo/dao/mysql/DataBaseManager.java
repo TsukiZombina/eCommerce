@@ -3,6 +3,8 @@ package mx.uam.azc.modelo.dao.mysql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,7 +15,7 @@ import java.sql.SQLException;
 public class DataBaseManager {
     private final static DataBaseManager INSTANCE = new DataBaseManager();
     
-    private final String host = "localhost";
+    private final String host = "192.168.0.16";
     private final String basededatos = "ecommercedb";
     private final String usuario ="uEmpresarial";
     private final String password ="12345";
@@ -25,10 +27,13 @@ public class DataBaseManager {
     private Connection crearConexion(){
         Connection con = null;
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             con = (Connection) DriverManager.getConnection(url, usuario, password);
             System.out.println("Conexion a la base de datos" + url + "...ok");
         } catch (SQLException ex) {
             System.out.println("Error: "+ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Driver - no");
         }
         
         return con;
