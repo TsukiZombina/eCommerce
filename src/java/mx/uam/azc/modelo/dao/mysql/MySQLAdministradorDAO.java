@@ -15,8 +15,8 @@ import mx.uam.azc.modelo.dao.AdministradorDAO;
  * @version 1.0
  */
 public class MySQLAdministradorDAO implements AdministradorDAO{
-    private final String UPDATE = "UPDATE tb_producto SET clave = ?, nombre = ?, descripcion = ? WHERE id_producto = ?";
-    private final String GETONE = "SELECT * FROM tb_producto WHERE id_producto = ?";
+    private final String UPDATE = "UPDATE tb_administrador SET nombre = ?, apellidoP = ?, apellidoM = ?, username=? WHERE id_administrador = ?";
+    private final String GETONE = "SELECT * FROM tb_administrador WHERE id_administrador = ?";
     private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?);";
     
     @Override
@@ -30,14 +30,14 @@ public class MySQLAdministradorDAO implements AdministradorDAO{
         
         try {
             ps = con.prepareStatement(UPDATE);
-            ps.setLong(1, unAdministrador.getIdAdministrador());
-            ps.setString(2, unAdministrador.getNombre());
-            ps.setString(3, unAdministrador.getApellidoP());
-            ps.setString(4, unAdministrador.getApellidoM());
-            ps.setString(5, unAdministrador.getUsername());
+            ps.setString(1, unAdministrador.getNombre());
+            ps.setString(2, unAdministrador.getApellidoP());
+            ps.setString(3, unAdministrador.getApellidoM());
+            ps.setString(4, unAdministrador.getUsername());
+            ps.setLong(5, unAdministrador.getIdAdministrador());
             
             if (ps.executeUpdate() == 0) {
-                throw new EcommerceException("No se pudo modificar el unAdministrador " + unAdministrador.getIdAdministrador());
+                throw new EcommerceException("No se pudo modificar el administrador " + unAdministrador.getIdAdministrador());
             }
         } catch (SQLException ex) {
             throw new EcommerceException("Error en SQL : " + ex.getMessage());
@@ -93,6 +93,7 @@ public class MySQLAdministradorDAO implements AdministradorDAO{
         return administrador;
     }
     
+    @Override
     public boolean validarAdministrador(Long id, String password) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;

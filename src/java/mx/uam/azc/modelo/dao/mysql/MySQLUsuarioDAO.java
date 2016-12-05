@@ -122,7 +122,6 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         String apellidoP = rs.getString("apellidoP");
         String apellidoM = rs.getString("apellidoM");
         String username = rs.getString("username");
-        String password = rs.getString("password");
         String sal = rs.getString("sal");
         String contactoTel = rs.getString("contactoTel");
         String contactoCorreo = rs.getString("contactoCorreo");
@@ -134,7 +133,6 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         usuario.setApellidoP(apellidoP);
         usuario.setApellidoM(apellidoM);
         usuario.setUsername(username);
-        usuario.setPassword(password);
         usuario.setSal(sal);
         usuario.setContactoTel(contactoTel);
         usuario.setContactoCorreo(contactoCorreo);
