@@ -15,4 +15,6 @@ public interface UsuarioDAO {
     public void modificar(Usuario usuario) throws EcommerceException;
     public void eliminar(Long id) throws EcommerceException;
     public Usuario obtener(Long id) throws EcommerceException;
+    boolean validarUsuario(Long id, String contrasenia) throws EcommerceException;
+    double generarSaldo();
 }

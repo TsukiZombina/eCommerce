@@ -17,11 +17,11 @@ import mx.uam.azc.modelo.dao.UsuarioDAO;
  * @version 1.0
  */
 public class MySQLUsuarioDAO implements UsuarioDAO{
-    private final String INSERT = "INSERT INTO tb_usuario(nombre, apellidoP, apellidoM, username, password, sal, contactoTel, contactoCorreo, saldo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )";
+    private final String INSERT = "INSERT INTO tb_usuario(nombre, apellidoP, apellidoM, username, password, sal, contactoTel, contactoCorreo, saldo) VALUES (?, ?, ?, ?, MD5(?), ?, ?, ?, ? )";
     private final String DELETE = "DELETE FROM tb_usuario WHERE id_usuario = ?";
-    private final String UPDATE = "UPDATE tb_usuario SET clave = ?, nombre = ?, descripcion = ? WHERE id_usuario = ?";
+    private final String UPDATE = "UPDATE tb_usuario SET nombre=?, apellidoP=?, apellidoM=?, username=?, password=?, sal=?, contactoTel=?, contactoCorreo=?, saldo=? WHERE id_usuario=?";
     private final String GETONE = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
-    private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?);";
+    private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?)";
 
     @Override
     public void insertar(Usuario unUsuario) throws EcommerceException {
@@ -39,11 +39,11 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(2, unUsuario.getApellidoP());
             ps.setString(3, unUsuario.getApellidoM());
             ps.setString(4, unUsuario.getUsername());
-            ps.setString(5, unUsuario.getPassword());
+            ps.setString(5, unUsuario.getSal()+unUsuario.getPassword());
             ps.setString(8, unUsuario.getSal());
             ps.setString(6, unUsuario.getContactoTel());
             ps.setString(7, unUsuario.getContactoCorreo());
-            ps.setDouble(9, unUsuario.getSaldo());
+            ps.setDouble(9, generarSaldo());
 
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("Puede ser que no se haya guardado");
@@ -171,12 +171,13 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         return usuario;
     }
     
+    @Override
     public double generarSaldo(){
-        double saldo = 0;
-        ThreadLocalRandom.current().nextInt(0, 1000 + 1);
+        double saldo = ThreadLocalRandom.current().nextInt(100, 1000 + 1);
         return saldo;
     }
     
+    @Override
     public boolean validarUsuario(Long id, String password) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
@@ -192,7 +193,7 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             unUsuario = obtener(id);
             
             if (unUsuario == null)
-                throw new EcommerceException("No se pudo ibtener la persona con id: " + id);
+                throw new EcommerceException("No se pudo obtener la persona con id: " + id);
             
             ps = con.prepareStatement(CHECK_PASSWORD);
             ps.setLong(1, unUsuario.getIdUsuario());
