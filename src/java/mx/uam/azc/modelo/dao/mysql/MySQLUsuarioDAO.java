@@ -19,7 +19,7 @@ import mx.uam.azc.modelo.dao.UsuarioDAO;
 public class MySQLUsuarioDAO implements UsuarioDAO{
     private final String INSERT = "INSERT INTO tb_usuario(nombre, apellidoP, apellidoM, username, password, sal, contactoTel, contactoCorreo, saldo) VALUES (?, ?, ?, ?, MD5(?), ?, ?, ?, ? )";
     private final String DELETE = "DELETE FROM tb_usuario WHERE id_usuario = ?";
-    private final String UPDATE = "UPDATE tb_usuario SET nombre=?, apellidoP=?, apellidoM=?, username=?, password=?, sal=?, contactoTel=?, contactoCorreo=?, saldo=? WHERE id_usuario=?";
+    private final String UPDATE = "UPDATE tb_usuario SET nombre=?, apellidoP=?, apellidoM=?, username=?, contactoTel=?, contactoCorreo=? WHERE id_usuario=?";
     private final String GETONE = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
     private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?)";
 
@@ -80,9 +80,9 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(2, unUsuario.getApellidoP());
             ps.setString(3, unUsuario.getApellidoM());
             ps.setString(4, unUsuario.getUsername());
-            ps.setString(5, unUsuario.getPassword());
-            ps.setString(6, unUsuario.getContactoTel());
-            ps.setString(7, unUsuario.getContactoCorreo());
+            ps.setString(5, unUsuario.getContactoTel());
+            ps.setString(6, unUsuario.getContactoCorreo());
+            ps.setLong(7, unUsuario.getIdUsuario());
             
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("No se pudo modificar el usuario " + unUsuario.getIdUsuario());
