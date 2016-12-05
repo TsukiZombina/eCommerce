@@ -3,8 +3,6 @@ package mx.uam.azc.modelo.dao.mysql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +31,7 @@ public class DataBaseManager {
         } catch (SQLException ex) {
             System.out.println("Error: "+ex.getMessage());
         } catch (ClassNotFoundException ex) {
-            System.out.println("Driver - no");
+            System.out.println("Driver: "+ex.getMessage());
         }
         
         return con;
