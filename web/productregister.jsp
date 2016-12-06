@@ -184,34 +184,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form>
                     <div class="col_1_of_2 span_1_of_2">
                         <div><input type="text" value="Product Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Name';}"></div>
-                        <div><input type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Code';
-                                }"></div>
-                        <div><input type="textarea" value="Description" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Description';
-                                }"></div>
-                        <div><input type="text" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'password';}"></div>
+                                    this.value = 'Name';}" name="name"></div>
+                        <div><input type="text" value="Code" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                    this.value = 'Code';}" name="code"></div>
+                        <div><textarea rows="2" cols="58" value="Description" onfocus="this.value = 'Description';" onblur="if (this.value == 'Description') {
+                                    this.value = 'Description';}" name="description"></textarea></div>
                     </div>
                     <div class="col_1_of_2 span_1_of_2">	
-                        <div><input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Address';
-                                }"></div>
                         <div><select id="provider" name="provider" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Select a Country</option>         
-                                <option value="AX">Ãland Islands</option>
+                                <option value="null">Select a Provider</option>         
+                                <option value="AX">Providers</option>
                             </select></div>		        
-                        <div><input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'City';
+                        <div><input type="text" value="Unit Price" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                    this.value = 'Unit Price';
                                 }"></div>
                         <div>
                         </div>
-                        <input type="text" value="" class="code"> - <input type="text" value="" class="number">
-                        <p class="code">Country Code + Phone Number</p>
+                        <input type="text" value="Stock" class="code"> 
                     </div>
                     <button class="grey">Submit</button>
-                    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
                     <div class="clear"></div>
                 </form>
             </div>
