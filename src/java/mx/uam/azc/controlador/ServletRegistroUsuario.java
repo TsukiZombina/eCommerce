@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import mx.uam.azc.modelo.EcommerceException;
 import mx.uam.azc.modelo.beans.Usuario;
 import mx.uam.azc.modelo.dao.DAOManager;
@@ -31,6 +32,7 @@ public class ServletRegistroUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String nombre = request.getParameter("nombre");
         String apellidoP = request.getParameter("apellidoP");
         String apellidoM = request.getParameter("apellidoM");
@@ -38,9 +40,9 @@ public class ServletRegistroUsuario extends HttpServlet {
         String password = request.getParameter("password");
         String contactoTel = request.getParameter("contactoTel");
         String contactoCorreo = request.getParameter("contactoCorreo");
-        
+
         Usuario unUsuario = new Usuario();
-        
+
         unUsuario.setNombre(nombre);
         unUsuario.setApellidoP(apellidoP);
         unUsuario.setApellidoM(apellidoM);
@@ -56,7 +58,16 @@ public class ServletRegistroUsuario extends HttpServlet {
         } catch (EcommerceException ex) {
             System.out.println(ex.getMessage());
         }
-        
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        if (unUsuario.getIdUsuario() != null) {
+            //Creamos nuestra sesión
+            HttpSession sesion = request.getSession(true);
+            sesion.setAttribute("usuario", unUsuario);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            request.setAttribute("error", "Error al registrarse. Intente más tarde");
+            request.getRequestDispatcher("404.jsp").forward(request, response);
+        }
+
     }
 }
