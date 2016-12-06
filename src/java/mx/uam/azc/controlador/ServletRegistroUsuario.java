@@ -46,7 +46,7 @@ public class ServletRegistroUsuario extends HttpServlet {
         unUsuario.setApellidoM(apellidoM);
         unUsuario.setUsername(username);
         unUsuario.setPassword(password);
-        unUsuario.setSal("qwerty");
+        unUsuario.setSal("");
         unUsuario.setContactoTel(contactoTel);
         unUsuario.setContactoCorreo(contactoCorreo);
 

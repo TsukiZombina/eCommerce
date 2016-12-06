@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ThreadLocalRandom;
 import mx.uam.azc.modelo.EcommerceException;
+import mx.uam.azc.modelo.Sal;
 import mx.uam.azc.modelo.beans.Usuario;
 import mx.uam.azc.modelo.dao.UsuarioDAO;
 
@@ -39,10 +40,11 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(2, unUsuario.getApellidoP());
             ps.setString(3, unUsuario.getApellidoM());
             ps.setString(4, unUsuario.getUsername());
-            ps.setString(5, unUsuario.getSal()+unUsuario.getPassword());
-            ps.setString(8, unUsuario.getSal());
-            ps.setString(6, unUsuario.getContactoTel());
-            ps.setString(7, unUsuario.getContactoCorreo());
+            String sal = new Sal().generarSal();
+            ps.setString(5, sal+unUsuario.getPassword());
+            ps.setString(6, sal);
+            ps.setString(7, unUsuario.getContactoTel());
+            ps.setString(8, unUsuario.getContactoCorreo());
             ps.setDouble(9, generarSaldo());
 
             if (ps.executeUpdate() == 0) {
