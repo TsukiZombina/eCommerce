@@ -46,7 +46,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="cssmenu">
                     <ul>
-                        <li class="active"><a href="login.jsp">Account</a></li> |
+                        <%
+                            if (usuario.getIdUsuario() != null) {
+                        %>
+                        <li class="active"><a href="index.jsp">Account</a></li> | |
+                            <%
+                            } else {
+                            %>
+                        <li class="active"><a href="login.jsp">Account</a></li> | |
+                            <%
+                                }
+                            %>
                         <li><a href="checkout.jsp">Wishlist</a></li> |
                         <li><a href="checkout.jsp">Checkout</a></li> |
                             <%
@@ -209,7 +219,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         this.value = 'Your Website';
                                     }">
                             <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                        this.value = 'Subject';}" style="margin-left: 10px">
+                                        this.value = 'Subject';
+                                    }" style="margin-left: 10px">
                         </div>
                         <div class="text">
                             <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {

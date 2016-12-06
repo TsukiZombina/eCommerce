@@ -87,7 +87,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="cssmenu">
                     <ul>
-                        <li class="active"><a href="login.jsp">Account</a></li> |
+                        <%
+                            if (usuario.getIdUsuario() != null) {
+                        %>
+                        <li class="active"><a href="index.jsp">Account</a></li> | |
+                            <%
+                            } else {
+                            %>
+                        <li class="active"><a href="login.jsp">Account</a></li> | |
+                            <%
+                                }
+                            %>
                         <li><a href="checkout.jsp">Wishlist</a></li> |
                         <li><a href="checkout.jsp">Checkout</a></li> |
                             <%
@@ -204,7 +214,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header-bottom-right">
                     <div class="search">	  
                         <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Search';}">
+                                    this.value = 'Search';
+                                }">
                         <input type="submit" value="Subscribe" id="submit" name="submit">
                         <div id="response"> </div>
                     </div>

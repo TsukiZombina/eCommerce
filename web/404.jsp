@@ -19,14 +19,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="js/megamenu.js"></script>
         <script>$(document).ready(function () {
-        $(".megamenu").megamenu();
-    });</script>
+                $(".megamenu").megamenu();
+            });</script>
         <script src="js/jquery.easydropdown.js"></script>
     </head>
     <%
-        String mensajeError = (String)request.getAttribute("error");
+        String mensajeError = (String) request.getAttribute("error");
     %>
-    
+
     <body>
         <div class="header-top">
             <div class="wrap"> 
@@ -50,7 +50,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="cssmenu">
                     <ul>
-                        <li class="active"><a href="login.jsp">Account</a></li> |
+                        <%
+                            if (usuario.getIdUsuario() != null) {
+                        %>
+                        <li class="active"><a href="index.jsp">Account</a></li> | |
+                            <%
+                            } else {
+                            %>
+                        <li class="active"><a href="login.jsp">Account</a></li> | |
+                            <%
+                                }
+                            %>
                         <li><a href="checkout.jsp">Wishlist</a></li> |
                         <li><a href="checkout.jsp">Checkout</a></li> |
                             <%
@@ -167,8 +177,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header-bottom-right">
                     <div class="search">	  
                         <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                            this.value = 'Search';
-                                        }">
+                                    this.value = 'Search';
+                                }">
                         <input type="submit" value="Subscribe" id="submit" name="submit">
                         <div id="response"> </div>
                     </div>
@@ -236,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             js.id = id;
                                             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
                                             fjs.parentNode.insertBefore(js, fjs);
-                                                    }(document, 'script', 'facebook-jssdk'));</script>
+                                        }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="like_box">	
                                         <div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                                     </div>
