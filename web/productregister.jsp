@@ -10,6 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <jsp:setProperty name="product" property="*"/>
     <jsp:setProperty name="productprovider" property="existencia"/>
     <jsp:setProperty name="productprovider" property="precioUnitario"/>
+</jsp:useBean>
 <!DOCTYPE HTML>
 <html>
     <head>
