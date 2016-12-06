@@ -17,12 +17,14 @@ import mx.uam.azc.modelo.dao.UsuarioDAO;
  * @author Ernesto García Maldonado
  * @version 1.0
  */
-public class MySQLUsuarioDAO implements UsuarioDAO{
+public class MySQLUsuarioDAO implements UsuarioDAO {
+
     private final String INSERT = "INSERT INTO tb_usuario(nombre, apellidoP, apellidoM, username, password, sal, contactoTel, contactoCorreo, saldo) VALUES (?, ?, ?, ?, MD5(?), ?, ?, ?, ? )";
     private final String DELETE = "DELETE FROM tb_usuario WHERE id_usuario = ?";
     private final String UPDATE = "UPDATE tb_usuario SET nombre=?, apellidoP=?, apellidoM=?, username=?, contactoTel=?, contactoCorreo=? WHERE id_usuario=?";
     private final String GETONE = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
     private final String CHECK_PASSWORD = "SELECT verificarContrasenia(?, ?)";
+    private final String USERNAME = "SELECT id_usuario FROM tb_usuario WHERE username= ? ";
 
     @Override
     public void insertar(Usuario unUsuario) throws EcommerceException {
@@ -41,7 +43,7 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(3, unUsuario.getApellidoM());
             ps.setString(4, unUsuario.getUsername());
             String sal = new Sal().generarSal();
-            ps.setString(5, sal+unUsuario.getPassword());
+            ps.setString(5, sal + unUsuario.getPassword());
             ps.setString(6, sal);
             ps.setString(7, unUsuario.getContactoTel());
             ps.setString(8, unUsuario.getContactoCorreo());
@@ -71,11 +73,11 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
     public void modificar(Usuario unUsuario) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
-        
+
         if (con == null) {
             throw new EcommerceException("No  hay conexión a la BD");
         }
-        
+
         try {
             ps = con.prepareStatement(UPDATE);
             ps.setString(1, unUsuario.getNombre());
@@ -85,7 +87,7 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
             ps.setString(5, unUsuario.getContactoTel());
             ps.setString(6, unUsuario.getContactoCorreo());
             ps.setLong(7, unUsuario.getIdUsuario());
-            
+
             if (ps.executeUpdate() == 0) {
                 throw new EcommerceException("No se pudo modificar el usuario " + unUsuario.getIdUsuario());
             }
@@ -100,11 +102,11 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
     public void eliminar(Long id) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
         PreparedStatement ps = null;
-        
+
         if (con == null) {
             throw new EcommerceException("No  hay conexión a la BD");
         }
-        
+
         try {
             ps = con.prepareStatement(DELETE);
             ps.setLong(1, id);
@@ -149,11 +151,11 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         PreparedStatement ps = null;
         ResultSet rs = null;
         Usuario usuario = null;
-        
+
         if (con == null) {
             throw new EcommerceException("No  hay conexión a la BD");
         }
-        
+
         try {
             ps = con.prepareStatement(GETONE);
             ps.setLong(1, id);
@@ -170,13 +172,13 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         }
         return usuario;
     }
-    
+
     @Override
-    public double generarSaldo(){
+    public double generarSaldo() {
         double saldo = ThreadLocalRandom.current().nextInt(100, 1000 + 1);
         return saldo;
     }
-    
+
     @Override
     public boolean validarUsuario(Long id, String password) throws EcommerceException {
         Connection con = DataBaseManager.getConexion();
@@ -184,33 +186,63 @@ public class MySQLUsuarioDAO implements UsuarioDAO{
         ResultSet rs = null;
         Usuario unUsuario = null;
         boolean verifica = false;
-        
+
         if (con == null) {
             throw new EcommerceException("No  hay conexión a la BD");
         }
-        
+
         try {
             unUsuario = obtener(id);
-            
-            if (unUsuario == null)
+
+            if (unUsuario == null) {
                 throw new EcommerceException("No se pudo obtener la persona con id: " + id);
-            
+            }
+
             ps = con.prepareStatement(CHECK_PASSWORD);
             ps.setLong(1, unUsuario.getIdUsuario());
             ps.setString(2, unUsuario.getSal() + password);
-            
+
             rs = ps.executeQuery();
-            
-            if (rs.next()){
+
+            if (rs.next()) {
                 verifica = rs.getBoolean(1);
-            } else
+            } else {
                 throw new EcommerceException("No se pudo validar la contraseña");
-            
+            }
+
         } catch (SQLException ex) {
             throw new EcommerceException("Error SQL : " + ex.getMessage());
-        } finally{
+        } finally {
             MySQLUtils.cerrar(ps, rs, con);
-        }  
+        }
         return verifica;
+    }
+
+    @Override
+    public Long buscarUsername(String username) throws EcommerceException {
+        Connection con = DataBaseManager.getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Long id;
+
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+
+        try {
+            ps = con.prepareStatement(USERNAME);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                id = rs.getLong("id_usuario");
+            } else {
+                id = -1L;
+            }
+        } catch (SQLException ex) {
+            throw new EcommerceException("Error SQL : " + ex.getMessage());
+        } finally {
+            MySQLUtils.cerrar(ps, rs, con);
+        }
+        return id;
     }
 }
