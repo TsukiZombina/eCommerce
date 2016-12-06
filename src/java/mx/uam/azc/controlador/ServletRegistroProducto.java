@@ -35,8 +35,10 @@ public class ServletRegistroProducto extends HttpServlet {
         String clave = request.getParameter("clave");
         String nombre = request.getParameter("nombre");
         String descripcion = request.getParameter("descripcion");
+        Long idProducto = Long.parseLong(request.getParameter("idProducto"));
+        Long idProveedor = Long.parseLong(request.getParameter("proveedor"));
         int existencia = Integer.parseInt(request.getParameter("existencia"));
-        double precioUnitario = Double.parseDouble(request.getParameter("precioUnitario"));
+        double precioUnitario = Double.parseDouble(request.getParameter("precioUnitario"));        
         
         Producto unProducto = new Producto();
         ProductoProveedor unProductoProveedor = new ProductoProveedor();
@@ -44,12 +46,21 @@ public class ServletRegistroProducto extends HttpServlet {
         unProducto.setClave(clave);
         unProducto.setNombre(nombre);
         unProducto.setDescripcion(descripcion);
-        unProductoProveedor.setExistencia(existencia);
-        unProductoProveedor.setPrecioUnitario(precioUnitario);
 
         DAOManager manager = new MySQLDAOManager();
         try {
             manager.getProductoDAO().insertar(unProducto);
+        } catch (EcommerceException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        unProductoProveedor.setIdProveedor(idProveedor);
+        unProductoProveedor.setIdProducto(idProducto);
+        unProductoProveedor.setExistencia(existencia);
+        unProductoProveedor.setPrecioUnitario(precioUnitario);
+        
+        try {
+            manager.getProductoProveedorDAO().insertar(unProductoProveedor);
         } catch (EcommerceException ex) {
             System.out.println(ex.getMessage());
         }

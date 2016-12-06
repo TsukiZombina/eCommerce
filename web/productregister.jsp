@@ -7,10 +7,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario">
 <jsp:useBean id="product" class="mx.uam.azc.modelo.beans.Producto" scope="session">
+<jsp:useBean id="provider" class="mx.uam.azc.modelo.beans.Producto" scope="session">
 <jsp:useBean id="productprovider" class="mx.uam.azc.modelo.beans.ProductoProveedor" scope="session">
         <jsp:setProperty name="product" property="*"/>
         <jsp:setProperty name="productprovider" property="existencia"/>
         <jsp:setProperty name="productprovider" property="precioUnitario"/>
+</jsp:useBean>
 </jsp:useBean>
 </jsp:useBean>
 </jsp:useBean>
@@ -205,19 +207,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <form>
                         <div class="col_1_of_2 span_1_of_2">
                             <div><input type="text" value="Product Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                        this.value = 'Name';
-                                    }" name="name"></div>
+                                        this.value = 'Name';}" name="nombre"></div>
                             <div><input type="text" value="Code" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                        this.value = 'Code';
-                                    }" name="code"></div>
+                                        this.value = 'Code';}" name="clave"></div>
                             <div><textarea rows="2" cols="58" value="Description" onfocus="this.value = 'Description';" onblur="if (this.value == 'Description') {
-                                        this.value = 'Description';
-                                    }" name="description"></textarea></div>
+                                        this.value = 'Description';}" name="descripcion"></textarea></div>
                         </div>
                         <div class="col_1_of_2 span_1_of_2">	
-                            <div><select id="provider" name="provider" onchange="change_country(this.value)" class="frm-field required">
+                            <div><select id="provider" name="Proveedor" onchange="change_country(this.value)" class="frm-field required">
                                     <option value="null">Select a Provider</option>         
                                     <option value="AX">Providers</option>
+                                    <c:forEach var="item" items="${obj1.getValues(obj2)}">
+                                        <option>${item}</option>
+                                    </c:forEach>
                                 </select></div>		        
                             <div><input type="text" value="Unit Price" onfocus="this.value = '';" onblur="if (this.value == '') {
                                         this.value = 'Unit Price';

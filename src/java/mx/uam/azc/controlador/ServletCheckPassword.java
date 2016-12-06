@@ -1,9 +1,6 @@
 package mx.uam.azc.controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,6 +72,5 @@ public class ServletCheckPassword extends HttpServlet {
         } else{
             response.sendRedirect("login.jsp");
         }
-        
     }
 }
