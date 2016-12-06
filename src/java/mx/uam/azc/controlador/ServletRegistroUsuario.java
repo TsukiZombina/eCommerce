@@ -62,6 +62,5 @@ public class ServletRegistroUsuario extends HttpServlet {
         }
         
         request.getRequestDispatcher("index.jsp").forward(request, response);
-
     }
 }

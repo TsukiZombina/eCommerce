@@ -5,6 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="user" class="mx.uam.azc.modelo.beans.Usuario" scope="session">
+    <jsp:setProperty name="user" property="*"/>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -22,7 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });</script>
         <script src="js/jquery.easydropdown.js"></script>
     </head>
-    <body> 
+    <body>
         <div class="header-top">
             <div class="wrap"> 
                 <div class="header-top-left">
@@ -184,27 +186,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form action="ServletRegistroUsuario" method="post">
                     <div class="col_1_of_2 span_1_of_2">
                         <div><input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Name';
-                                }" name="nombre"></div>
+                                    this.value = 'Name';}" name="nombre"></div>
                         <div><input type="text" value="Last name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'apellidoP';
-                                }"></div>
+                                    this.value = 'Last name';}" name="apellidoP"></div>
                         <div><input type="text" value="Second last name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'apellidoM';
-                                }"></div>
+                                    this.value = 'Second last name';}" name="apellidoM"></div>
                         <div><input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'username';}"></div>
+                                    this.value = 'Username';}" name="username"></div>
                     </div>
                     <div class="col_1_of_2 span_1_of_2">	
-                        <div><input type="text" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'password';
-                                }"></div>
+                        <div><input type="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                    this.value = 'password';}" name="password"></div>
                         <div><input type="text" value="Phone number" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'contactoCorreo';
-                                }"></div>		        
+                                    this.value = 'contactoCorreo';}" name="contactoTel"></div>		        
                         <div><input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'contactoTel';
-                                }"></div>
+                                    this.value = 'contactoTel';}" name="contactoCorreo"></div>
                         
                     </div>
                     <button class="grey">Submit</button>
@@ -332,5 +328,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
+        </jsp:useBean>
     </body>
 </html>
