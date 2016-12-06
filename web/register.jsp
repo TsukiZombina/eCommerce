@@ -189,18 +189,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     this.value = 'Name';}" name="nombre"></div>
                         <div><input type="text" value="Last name" onfocus="this.value = '';" onblur="if (this.value == '') {
                                     this.value = 'Last name';}" name="apellidoP"></div>
-                        <div><input type="text" value="Second last name" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        <div><input type="text" value="Second lastname" onfocus="this.value = '';" onblur="if (this.value == '') {
                                     this.value = 'Second last name';}" name="apellidoM"></div>
                         <div><input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {
                                     this.value = 'Username';}" name="username"></div>
                     </div>
                     <div class="col_1_of_2 span_1_of_2">	
-                        <div><input type="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'password';}" name="password"></div>
+                        <div><input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                    this.value = 'Password';}" name="password"></div>
                         <div><input type="text" value="Phone number" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'contactoCorreo';}" name="contactoTel"></div>		        
+                                    this.value = 'Phone number';}" name="contactoTel"></div>		        
                         <div><input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'contactoTel';}" name="contactoCorreo"></div>
+                                    this.value = 'Email';}" name="contactoCorreo"></div>
                         
                     </div>
                     <button class="grey">Submit</button>
