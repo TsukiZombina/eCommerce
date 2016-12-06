@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="user" class="mx.uam.azc.modelo.beans.Usuario" scope="session">
     <jsp:setProperty name="user" property="*"/>
+</jsp:useBean>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -328,6 +329,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
-        </jsp:useBean>
     </body>
 </html>

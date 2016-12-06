@@ -54,6 +54,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="checkout.jsp">Wishlist</a></li> |
 					<li><a href="checkout.jsp">Checkout</a></li> |
 					<li><a href="login.jsp">Log In</a></li> |
+                                        <li><a href="productregister.jsp">Producto</a></li>
 					<li><a href="register.jsp">Sign Up</a></li>
 				</ul>
 			</div>

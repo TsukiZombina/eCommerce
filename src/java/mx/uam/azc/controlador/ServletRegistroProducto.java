@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mx.uam.azc.modelo.EcommerceException;
-import mx.uam.azc.modelo.beans.Usuario;
+import mx.uam.azc.modelo.beans.Producto;
+import mx.uam.azc.modelo.beans.ProductoProveedor;
 import mx.uam.azc.modelo.dao.DAOManager;
 import mx.uam.azc.modelo.dao.mysql.MySQLDAOManager;
 
@@ -17,8 +18,8 @@ import mx.uam.azc.modelo.dao.mysql.MySQLDAOManager;
  * @author Ernesto García Maldonado
  * @version 1.0
  */
-@WebServlet(name = "ServletRegistroUsuario", urlPatterns = {"/ServletRegistroUsuario"})
-public class ServletRegistroUsuario extends HttpServlet {
+@WebServlet(name = "ServletRegistroProducto", urlPatterns = {"/ServletRegistroProducto"})
+public class ServletRegistroProducto extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -31,28 +32,24 @@ public class ServletRegistroUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String clave = request.getParameter("clave");
         String nombre = request.getParameter("nombre");
-        String apellidoP = request.getParameter("apellidoP");
-        String apellidoM = request.getParameter("apellidoM");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String contactoTel = request.getParameter("contactoTel");
-        String contactoCorreo = request.getParameter("contactoCorreo");
+        String descripcion = request.getParameter("descripcion");
+        int existencia = Integer.parseInt(request.getParameter("existencia"));
+        double precioUnitario = Double.parseDouble(request.getParameter("precioUnitario"));
         
-        Usuario unUsuario = new Usuario();
+        Producto unProducto = new Producto();
+        ProductoProveedor unProductoProveedor = new ProductoProveedor();
         
-        unUsuario.setNombre(nombre);
-        unUsuario.setApellidoP(apellidoP);
-        unUsuario.setApellidoM(apellidoM);
-        unUsuario.setUsername(username);
-        unUsuario.setPassword(password);
-        unUsuario.setSal("qwerty");
-        unUsuario.setContactoTel(contactoTel);
-        unUsuario.setContactoCorreo(contactoCorreo);
+        unProducto.setClave(clave);
+        unProducto.setNombre(nombre);
+        unProducto.setDescripcion(descripcion);
+        unProductoProveedor.setExistencia(existencia);
+        unProductoProveedor.setPrecioUnitario(precioUnitario);
 
         DAOManager manager = new MySQLDAOManager();
         try {
-            manager.getUsuarioDAO().insertar(unUsuario);
+            manager.getProductoDAO().insertar(unProducto);
         } catch (EcommerceException ex) {
             System.out.println(ex.getMessage());
         }
