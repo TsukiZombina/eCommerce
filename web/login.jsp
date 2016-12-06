@@ -18,8 +18,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="js/megamenu.js"></script>
         <script>$(document).ready(function () {
-        $(".megamenu").megamenu();
-    });</script>
+                $(".megamenu").megamenu();
+            });</script>
         <!-- dropdown -->
         <script src="js/jquery.easydropdown.js"></script>
     </head>
@@ -151,8 +151,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header-bottom-right">
                     <div class="search">	  
                         <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                            this.value = 'Search';
-                                        }">
+                                    this.value = 'Search';
+                                }">
                         <input type="submit" value="Subscribe" id="submit" name="submit">
                         <div id="response"> </div>
                     </div>
@@ -193,11 +193,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="login-title">
                         <h4 class="title">Registered Customers</h4>
                         <div id="loginbox" class="loginbox">
-                            <form action="" method="post" name="login" id="login-form">
+                            <form action="ServletCheckPassword" method="post" name="login" id="login-form">
                                 <fieldset class="input">
                                     <p id="login-form-username">
-                                        <label for="modlgn_username">Email</label>
-                                        <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
+                                        <label for="modlgn_username">Username</label>
+                                        <input id="modlgn_username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
                                     </p>
                                     <p id="login-form-password">
                                         <label for="modlgn_passwd">Password</label>
@@ -250,7 +250,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             js.id = id;
                                             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
                                             fjs.parentNode.insertBefore(js, fjs);
-                                                    }(document, 'script', 'facebook-jssdk'));</script>
+                                        }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="like_box">	
                                         <div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                                     </div>
