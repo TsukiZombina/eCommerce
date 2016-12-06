@@ -18,9 +18,9 @@ import mx.uam.azc.modelo.dao.ProveedorDAO;
  * @version 1.0
  */
 public class MySQLProveedorDAO implements ProveedorDAO{
-    private final String INSERT = "INSERT INTO tb_proveedor(clave, nombre, descripcion) VALUES (?, ?, ?)";
+    private final String INSERT = "INSERT INTO tb_proveedor(clave, nombre, apellidoP, apellidoM, contactoTel, contactoCorreo, contactoDireccion, encargado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private final String DELETE = "DELETE FROM tb_proveedor WHERE id_proveedor = ?";
-    private final String UPDATE = "UPDATE tb_proveedor SET clave = ?, nombre = ?, descripcion = ? WHERE id_proveedor = ?";
+    private final String UPDATE = "UPDATE tb_proveedor SET clave = ?, nombre = ?, apellidoP = ?, apellidoM = ?, contactoTel = ?, contactoCorreo = ?, contactoDireccion = ?, encargado = ? WHERE id_proveedor = ?";
     private final String GETONE = "SELECT * FROM tb_proveedor WHERE id_proveedor = ?";
     private final String GETALL = "SELECT * FROM tb_proveedor";
 
