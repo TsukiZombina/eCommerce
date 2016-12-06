@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario"/>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -52,8 +53,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li class="active"><a href="login.jsp">Account</a></li> |
                         <li><a href="checkout.jsp">Wishlist</a></li> |
                         <li><a href="checkout.jsp">Checkout</a></li> |
+                            <%
+                                if (usuario.getIdUsuario() != null) {
+                            %>
+                        <li><a href="cerrarSesion.jsp">Log Out</a></li> |
+                        <li>Bienvenido: <%=usuario.getNombre()%></li> |
+                            <%
+                            } else {
+                            %>
                         <li><a href="login.jsp">Log In</a></li> |
+                        <!--<li><a href="productregister.jsp">Producto</a></li>-->
                         <li><a href="register.jsp">Sign Up</a></li>
+                            <%
+                                }
+                            %>
                     </ul>
                 </div>
                 <div class="clear"></div>
