@@ -5,9 +5,6 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="user" class="mx.uam.azc.modelo.beans.Usuario" scope="session">
-    <jsp:setProperty name="user" property="*"/>
-</jsp:useBean>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -187,11 +184,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form action="ServletRegistroUsuario" method="post">
                     <div class="col_1_of_2 span_1_of_2">
                         <div><input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Name';}" name="nombre"></div>
+                                    this.value = 'Name';
+                                }" name="nombre"></div>
                         <div><input type="text" value="Last name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Last name';}" name="apellidoP"></div>
+                                    this.value = 'Last name';
+                                }" name="apellidoP"></div>
                         <div><input type="text" value="Second lastname" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Second last name';}" name="apellidoM"></div>
+                                    this.value = 'Second last name';
+                                }" name="apellidoM"></div>
                         <div><input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {
                                     this.value = 'Username';}" name="username"></div>
                     </div>
@@ -202,7 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     this.value = 'Phone number';}" name="contactoTel"></div>		        
                         <div><input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {
                                     this.value = 'Email';}" name="contactoCorreo"></div>
-                        
+
                     </div>
                     <button class="grey">Submit</button>
                     <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
