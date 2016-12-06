@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario"/>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -19,8 +20,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="js/megamenu.js"></script>
         <script>$(document).ready(function () {
-        $(".megamenu").megamenu();
-    });</script>
+                $(".megamenu").megamenu();
+            });</script>
         <!--start slider -->
         <link rel="stylesheet" href="css/fwslider.css" media="all">
         <script src="js/jquery-ui.min.js"></script>
@@ -55,9 +56,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li class="active"><a href="login.jsp">Account</a></li> |
                         <li><a href="checkout.jsp">Wishlist</a></li> |
                         <li><a href="checkout.jsp">Checkout</a></li> |
+                            <%
+                                if (usuario.getIdUsuario() != null) {
+                            %>
+                        <li><a href="cerrarSesion.jsp">Log Out</a></li> |
+                        <li>Bienvenido: <%=usuario.getNombre()%></li> |
+                            <%
+                            } else {
+                            %>
                         <li><a href="login.jsp">Log In</a></li> |
-                        <li><a href="productregister.jsp">Producto</a></li>
+                        <!--<li><a href="productregister.jsp">Producto</a></li>-->
                         <li><a href="register.jsp">Sign Up</a></li>
+                            <%
+                                }
+                            %>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -158,8 +170,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header-bottom-right">
                     <div class="search">	  
                         <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                            this.value = 'Search';
-                                        }">
+                                    this.value = 'Search';
+                                }">
                         <input type="submit" value="Subscribe" id="submit" name="submit">
                         <div id="response"> </div>
                     </div>
@@ -692,7 +704,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             js.id = id;
                                             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
                                             fjs.parentNode.insertBefore(js, fjs);
-                                                    }(document, 'script', 'facebook-jssdk'));</script>
+                                        }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="like_box">	
                                         <div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                                     </div>
