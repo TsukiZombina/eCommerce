@@ -5,17 +5,14 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario">
-<jsp:useBean id="product" class="mx.uam.azc.modelo.beans.Producto" scope="session">
-<jsp:useBean id="provider" class="mx.uam.azc.modelo.beans.Producto" scope="session">
-<jsp:useBean id="productprovider" class="mx.uam.azc.modelo.beans.ProductoProveedor" scope="session">
-        <jsp:setProperty name="product" property="*"/>
-        <jsp:setProperty name="productprovider" property="existencia"/>
-        <jsp:setProperty name="productprovider" property="precioUnitario"/>
-</jsp:useBean>
-</jsp:useBean>
-</jsp:useBean>
-</jsp:useBean>
+<jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario" />
+<jsp:useBean id="producto" class="mx.uam.azc.modelo.beans.Producto" scope="session" />
+<jsp:useBean id="proveedor" class="mx.uam.azc.modelo.beans.Producto" scope="session" />
+<jsp:useBean id="productoproveedor" class="mx.uam.azc.modelo.beans.ProductoProveedor" scope="session" />
+        <jsp:setProperty name="producto" property="*"/>
+        <jsp:setProperty name="productoproveedor" property="existencia"/>
+        <jsp:setProperty name="productoproveedor" property="precioUnitario"/>
+        
     <!DOCTYPE HTML>
     <html>
         <head>
