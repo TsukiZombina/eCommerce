@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import mx.uam.azc.modelo.EcommerceException;
 import mx.uam.azc.modelo.beans.ProductoProveedor;
 import mx.uam.azc.modelo.dao.ProductoProveedorDAO;
@@ -18,6 +20,7 @@ import mx.uam.azc.modelo.dao.ProductoProveedorDAO;
 public class MySQLProductoProveedorDAO implements ProductoProveedorDAO {
     private final String INSERT = "INSERT INTO tb_productoproveedor(id_producto, id_proveedor, existencia, precioUnitario) VALUES (?, ?, ?, ?)";
     private final String UPDATE = "UPDATE tb_productoproveedor SET id_producto = ?, id_proveedor = ?, existencia = ?, precioUnitario = ? WHERE id_productoproveedor = ?";
+    private final String GETALL = "SELECT * FROM tb_productoProveedor";
     
     @Override
     public void insertar(ProductoProveedor unProductoProveedor) throws EcommerceException {
@@ -81,5 +84,49 @@ public class MySQLProductoProveedorDAO implements ProductoProveedorDAO {
         } finally {
             MySQLUtils.cerrar(ps, con);
         }
+    }
+    
+    public ProductoProveedor convertir(ResultSet rs) throws SQLException{
+        Long id_productoProveedor = rs.getLong("id_productoProveedor");
+        Long id_producto = rs.getLong("id_producto");
+        Long id_proveedor = rs.getLong("id_proveedor");
+        int existencia = rs.getInt("existencia");
+        double precioUnitario = rs.getDouble("precioUnitario");
+        
+        ProductoProveedor unProductoProveedor = new ProductoProveedor();
+        unProductoProveedor.setIdProductoProveedor(id_productoProveedor);
+        unProductoProveedor.setIdProducto(id_producto);
+        unProductoProveedor.setIdProveedor(id_proveedor);
+        unProductoProveedor.setExistencia(existencia);
+        unProductoProveedor.setPrecioUnitario(precioUnitario);
+        
+        return unProductoProveedor;
+    }
+
+    @Override
+    public List<ProductoProveedor> obtenerTodos() throws EcommerceException {
+        Connection con = DataBaseManager.getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<ProductoProveedor> productoProveedores = new ArrayList<>();
+        
+        if (con==null)
+            throw new EcommerceException("No hay conexión a la BD");
+        
+        try {
+            ps = con.prepareStatement(GETALL);
+            rs = ps.executeQuery();
+            
+            while (rs.next()){
+                productoProveedores.add(convertir(rs));
+            }
+            
+        }catch(SQLException ex){
+            throw new EcommerceException("Error SQL: "+ex.getMessage());
+        }finally{
+            MySQLUtils.cerrar(ps, rs, con);
+        }
+        
+        return productoProveedores;
     }
 }

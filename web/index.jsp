@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="mx.uam.azc.modelo.beans.ProductoProveedor"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="mx.uam.azc.modelo.beans.Producto"%>
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -5,6 +9,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="/ServletProductosOfrecidos" />
 <jsp:useBean id="usuario" scope="session" class="mx.uam.azc.modelo.beans.Usuario"/>
 <!DOCTYPE HTML>
 <html>
@@ -30,6 +35,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--end slider -->
         <script src="js/jquery.easydropdown.js"></script>
     </head>
+    <%
+        HttpSession sesion = request.getSession();
+    %>
+    
     <body>
         <div class="header-top">
             <div class="wrap"> 
@@ -246,32 +255,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="slideNext"><span></span></div>
         </div>
         <!--/slider -->
+        
+        <%
+             ArrayList<Producto> productos = (ArrayList<Producto>)sesion.getAttribute("productos");
+             ArrayList<ProductoProveedor> productosProveedores = (ArrayList<ProductoProveedor>)sesion.getAttribute("productosProveedores");
+             
+             
+             int a=0;
+             Iterator<Producto> it = productos.iterator();
+             Producto p;
+        %>
+        
         <div class="main">
             <div class="wrap">
                 <div class="section group">
                     <div class="cont span_2_of_3">
                         <h2 class="head">Featured Products</h2>
                         <div class="top-box">
-                            <div class="col_1_of_3 span_1_of_3"> 
-                                <a href="single.jsp">
-                                    <div class="inner_content clearfix">
-                                        <div class="product_image">
-                                            <img src="images/pic.jpg" alt=""/>
-                                        </div>
-                                        <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                                        <div class="price">
-                                            <div class="cart-left">
-                                                <p class="title">Lorem Ipsum simply</p>
-                                                <div class="price1">
-                                                    <span class="actual">$12.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="cart-right"> </div>
-                                            <div class="clear"></div>
-                                        </div>				
-                                    </div>
-                                </a>
-                            </div>
+                            
+                            <!--Lista cada uno de los productos-->
+                            <%
+                                while (it.hasNext()){
+                                    p = it.next();
+                                
+                            %>
+                            
                             <div class="col_1_of_3 span_1_of_3">
                                 <a href="single.jsp">
                                     <div class="inner_content clearfix">
@@ -280,9 +288,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="price">
                                             <div class="cart-left">
-                                                <p class="title">Lorem Ipsum simply</p>
+                                                <p class="title"><%=p.getNombre() %></p>
+                                                <%
+                                                    long var = p.getIdProducto();
+                                                %>
                                                 <div class="price1">
-                                                    <span class="actual">$12.00</span>
+                                                    <span class="actual"><%=productosProveedores.get((int)var-1).getPrecioUnitario()%></span>
                                                 </div>
                                             </div>
                                             <div class="cart-right"> </div>
@@ -291,27 +302,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </a>
                             </div>
-                            <div class="col_1_of_3 span_1_of_3">
-                                <a href="single.jsp">
-                                    <div class="inner_content clearfix">
-                                        <div class="product_image">
-                                            <img src="images/pic2.jpg" alt=""/>
-                                        </div>
-                                        <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
-                                        <div class="price">
-                                            <div class="cart-left">
-                                                <p class="title">Lorem Ipsum simply</p>
-                                                <div class="price1">
-                                                    <span class="reducedfrom">$66.00</span>
-                                                    <span class="actual">$12.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="cart-right"> </div>
-                                            <div class="clear"></div>
-                                        </div>				
-                                    </div>
-                                </a>
-                            </div>
+                            
+                            
+                            <%
+                                }
+                            %>
                             <div class="clear"></div>
                         </div>	
                     </div>

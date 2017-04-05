@@ -1,10 +1,9 @@
 
 package mx.uam.azc.modelo.dao;
 
+import java.util.List;
 import mx.uam.azc.modelo.EcommerceException;
-import mx.uam.azc.modelo.beans.Producto;
 import mx.uam.azc.modelo.beans.ProductoProveedor;
-import mx.uam.azc.modelo.beans.Proveedor;
 
 /**
  *
@@ -15,4 +14,5 @@ import mx.uam.azc.modelo.beans.Proveedor;
 public interface ProductoProveedorDAO {
     public void insertar(ProductoProveedor unProductoProveedor) throws EcommerceException;
     public void modificar(ProductoProveedor unProductoProveedor) throws EcommerceException;
+    public List<ProductoProveedor> obtenerTodos() throws EcommerceException;
 }
