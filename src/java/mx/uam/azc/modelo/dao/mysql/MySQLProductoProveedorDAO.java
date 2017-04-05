@@ -21,6 +21,7 @@ public class MySQLProductoProveedorDAO implements ProductoProveedorDAO {
     private final String INSERT = "INSERT INTO tb_productoproveedor(id_producto, id_proveedor, existencia, precioUnitario) VALUES (?, ?, ?, ?)";
     private final String UPDATE = "UPDATE tb_productoproveedor SET id_producto = ?, id_proveedor = ?, existencia = ?, precioUnitario = ? WHERE id_productoproveedor = ?";
     private final String GETALL = "SELECT * FROM tb_productoProveedor";
+    private final String GET_PRODUCTOPROVEEDOR_BYIDPRODUCTO = "SELECT * FROM tb_productoProveedor WHERE id_producto=?";
     
     @Override
     public void insertar(ProductoProveedor unProductoProveedor) throws EcommerceException {
@@ -129,4 +130,33 @@ public class MySQLProductoProveedorDAO implements ProductoProveedorDAO {
         
         return productoProveedores;
     }
+
+    @Override
+    public ProductoProveedor obtenerPorIdProducto(Long id) throws EcommerceException {
+        Connection con = DataBaseManager.getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ProductoProveedor productoProveedor = null;
+        
+        if (con == null) {
+            throw new EcommerceException("No  hay conexión a la BD");
+        }
+        
+        try {
+            ps = con.prepareStatement(GET_PRODUCTOPROVEEDOR_BYIDPRODUCTO);
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                productoProveedor = convertir(rs);
+            } else {
+                throw new EcommerceException("No se encontró el producto con id " + id);
+            }
+        } catch (SQLException ex) {
+            throw new EcommerceException("Error SQL : " + ex.getMessage());
+        } finally {
+            MySQLUtils.cerrar(ps, rs, con);
+        }
+        return productoProveedor;
+    }
+    
 }

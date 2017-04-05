@@ -281,7 +281,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             %>
                             
                             <div class="col_1_of_3 span_1_of_3">
-                                <a href="single.jsp">
+                                <!--<form action="ServletDetalleProducto" method="GET">-->
+                                    
+                                <!--<a href="single.jsp">-->
+                                <a href="<%=request.getContextPath()%>/ServletDetalleProducto?idProducto=<%=p.getIdProducto() %>">
+                                    <input type="hidden" name="idProducto" value="<%=p.getIdProducto() %>"/>
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
                                             <img src="images/pic1.jpg" alt=""/>
@@ -301,6 +305,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>				
                                     </div>
                                 </a>
+                                <!--</form>-->
                             </div>
                             
                             

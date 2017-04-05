@@ -15,4 +15,5 @@ public interface ProductoProveedorDAO {
     public void insertar(ProductoProveedor unProductoProveedor) throws EcommerceException;
     public void modificar(ProductoProveedor unProductoProveedor) throws EcommerceException;
     public List<ProductoProveedor> obtenerTodos() throws EcommerceException;
+    public ProductoProveedor obtenerPorIdProducto(Long id) throws EcommerceException;
 }

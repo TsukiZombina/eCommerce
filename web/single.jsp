@@ -1,3 +1,5 @@
+<%@page import="mx.uam.azc.modelo.beans.ProductoProveedor"%>
+<%@page import="mx.uam.azc.modelo.beans.Producto"%>
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -64,6 +66,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         </script>	
     </head>
+    <%
+        HttpSession sesion = request.getSession();
+    %>
+    
     <body>
         <div class="header-top">
             <div class="wrap"> 
@@ -270,17 +276,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </ul>
                             <div class="clearfix"></div>
                         </div>
+                        <%
+                            Producto producto = (Producto)sesion.getAttribute("producto");
+                            ProductoProveedor productoProveedor = (ProductoProveedor)sesion.getAttribute("productoProveedor");
+                        %>
+                        
                         <div class="desc1 span_3_of_2">
-                            <h3 class="m_3">Lorem ipsum dolor sit amet</h3>
-                            <p class="m_5">Rs. 888 <span class="reducedfrom">Rs. 999</span> <a href="#">click for offer</a></p>
+                            <h3 class="m_3"><%=producto.getNombre() %></h3>
+                            <p class="m_5">$ <%=productoProveedor.getPrecioUnitario() %> <a href="#">Existencia: <%=productoProveedor.getExistencia() %></a></p>
                             <div class="btn_form">
                                 <form>
                                     <input type="submit" value="buy" title="">
                                 </form>
                             </div>
                             <span class="m_link"><a href="#">login to save in wishlist</a> </span>
-                            <p class="m_text2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit </p>
+                            <p class="m_text2"><%=producto.getDescripcion() %></p>
                         </div>
+                        
                         <div class="clear"></div>	
                         <div class="clients">
                             <h3 class="m_3">10 Other Products in the same category</h3>
