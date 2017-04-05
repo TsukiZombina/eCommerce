@@ -11,7 +11,7 @@ import mx.uam.azc.modelo.dao.OrdenDAO;
  * @author Ernesto García Maldonado
  * @version 1.0
  */
-public class MySQLOrdenDAO implements OrdenDAO{
+public class MySQLOrdenDAO implements OrdenDAO {
 
     @Override
     public void insertar(Orden t) throws EcommerceException {
@@ -37,5 +37,4 @@ public class MySQLOrdenDAO implements OrdenDAO{
     public Orden obtener(Long id) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }
