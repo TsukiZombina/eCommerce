@@ -21,7 +21,7 @@ public class MySQLDAOManager implements DAOManager {
     private AdministradorDAO administrador = null;
     private CarritoDAO carrito = null;
     private DetalleOrdenDAO detalleOrden = null;
-    private OrdenDAO orden = null;
+    private MySQLOrdenDAO orden = null;
     private ProductoDAO producto = null;
     private ProductoProveedorDAO productoProveedor = null;
     private ProveedorDAO proveedor = null;
@@ -54,7 +54,7 @@ public class MySQLDAOManager implements DAOManager {
     }
 
     @Override
-    public OrdenDAO getOrdenDAO() {
+    public MySQLOrdenDAO getOrdenDAO() {
         if (orden == null) {
             orden = new MySQLOrdenDAO();
         }

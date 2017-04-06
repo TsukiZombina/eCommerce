@@ -11,30 +11,25 @@ import mx.uam.azc.modelo.dao.OrdenDAO;
  * @author Ernesto García Maldonado
  * @version 1.0
  */
-public class MySQLOrdenDAO implements OrdenDAO {
+public class MySQLOrdenDAO {
 
-    @Override
-    public void insertar(Orden t) throws EcommerceException {
+    public void insertarMySQLOrdenDAO(Orden t) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void modificar(Orden t) throws EcommerceException {
+    public void modificarMySQLOrdenDAO(Orden t) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void eliminar(Long id) throws EcommerceException {
+    public void eliminarMySQLOrdenDAO(Long id) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Orden> obtenerTodos() throws EcommerceException {
+    public List<Orden> obtenerTodosMySQLOrdenDAO() throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Orden obtener(Long id) throws EcommerceException {
+    public Orden obtenerMySQLOrdenDAO(Long id) throws EcommerceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
